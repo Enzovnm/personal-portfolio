@@ -1,7 +1,7 @@
 export const TitleBar = () => {
   return (
-    <header className="bg-slate-black text-center text-slate-50 text-sm">
-      <h4>personal-portfolio</h4>
+    <header className="bg-slate-black text-center text-white text-sm font-medium">
+      <h1>personal-portfolio</h1>
     </header>
   );
 };

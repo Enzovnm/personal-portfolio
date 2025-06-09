@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-    --color-slate-black : #191a21
+  --color-slate-black: #191a21;
+  --color-slate-blue-explorer: #21222c;
+  --color-white: #f8f8f2;
+  --text-sm: 0.8125rem;
 }
