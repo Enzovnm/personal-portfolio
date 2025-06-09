@@ -1,3 +1,5 @@
+import ColapseAll from "/home/enzo/Programming/personal-portfolio/personal-portfolio/src/assets/collapse-all.svg?react";
+
 interface ActivityExplorerBarProps {
   className?: string;
 }
@@ -11,9 +13,7 @@ export const ActivityExplorerBar = ({
         <h2>EXPLORER: PERSONAL-PORTFOLIO</h2>
       </div>
       <div>
-        <button className="codicon codicon-add" aria-label="refresh">
-          Fil
-        </button>
+        <ColapseAll />
       </div>
     </div>
   );
