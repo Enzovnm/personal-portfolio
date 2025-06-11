@@ -1,4 +1,5 @@
 import ColapseAll from "/home/enzo/Programming/personal-portfolio/personal-portfolio/src/assets/collapse-all.svg?react";
+import Refresh from "/home/enzo/Programming/personal-portfolio/personal-portfolio/src/assets/refresh.svg?react";
 
 interface ActivityExplorerBarProps {
   className?: string;
@@ -14,6 +15,7 @@ export const ActivityExplorerBar = ({
       </div>
       <div>
         <ColapseAll />
+        <Refresh />
       </div>
     </div>
   );
