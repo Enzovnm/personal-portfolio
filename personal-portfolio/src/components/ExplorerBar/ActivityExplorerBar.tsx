@@ -15,7 +15,7 @@ export const ActivityExplorerBar = ({
       <div>
         <h2>EXPLORER: PERSONAL-PORTFOLIO</h2>
       </div>
-      <div>
+      <div className="flex gap-2">
         <button aria-label="Colapse All">
           <ColapseAll />
         </button>
