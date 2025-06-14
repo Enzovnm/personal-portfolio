@@ -1,7 +1,7 @@
 import type { FileType } from "./file-type";
 
-export interface Node {
+export interface INode {
   name: string;
   type: FileType;
-  children?: Node[];
+  children?: INode[];
 }

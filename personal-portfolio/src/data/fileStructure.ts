@@ -1,6 +1,6 @@
-import type { Node } from "../types/node";
+import type { INode } from "../types/node";
 
-export const fileStructure: Node = {
+export const fileStructure: INode = {
   name: "personal-portfolio",
   type: "folder",
   children: [
@@ -9,28 +9,30 @@ export const fileStructure: Node = {
       type: "folder",
       children: [
         {
-          name: "AboutMe.jsx",
-          type: "tsx",
-        },
-        {
-          name: "AboutMe.jsx",
-          type: "tsx",
-        },
-        {
-          name: "Carrer.tsx",
-          type: "tsx",
-        },
-        {
-          name: "Technologies.tsx",
-          type: "tsx",
-        },
-        {
-          name: "Projects.tsx",
-          type: "tsx",
-        },
-        {
-          name: "ContactMe.tsx",
-          type: "tsx",
+          name: "components",
+          type: "folder",
+          children: [
+            {
+              name: "AboutMe.jsx",
+              type: "tsx",
+            },
+            {
+              name: "Carrer.tsx",
+              type: "tsx",
+            },
+            {
+              name: "Technologies.tsx",
+              type: "tsx",
+            },
+            {
+              name: "Projects.tsx",
+              type: "tsx",
+            },
+            {
+              name: "ContactMe.tsx",
+              type: "tsx",
+            },
+          ],
         },
       ],
     },

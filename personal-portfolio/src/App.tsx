@@ -1,11 +1,14 @@
 import { ExplorerBar } from "./components/ExplorerBar/ExplorerBar";
 import { TitleBar } from "./components/TitleBar/TitleBar";
+import { DirectoryThreeContextProvider } from "./contexts/DirectoryTreeContext";
 
 export function App() {
   return (
     <>
-      <TitleBar />
-      <ExplorerBar />
+      <DirectoryThreeContextProvider>
+        <TitleBar />
+        <ExplorerBar />
+      </DirectoryThreeContextProvider>
     </>
   );
 }
