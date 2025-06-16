@@ -1,51 +1,69 @@
 import { useDirectoryTreeContext } from "../../hooks/useDirectoryTreeContext";
-import type { INode } from "../../types/node";
 import ChevronDown from "/home/enzo/Programming/personal-portfolio/personal-portfolio/src/assets/chevron-down.svg?react";
+import ReactTs from "/home/enzo/Programming/personal-portfolio/personal-portfolio/src/assets/react_ts.svg?react";
+import Folder from "/home/enzo/Programming/personal-portfolio/personal-portfolio/src/assets/folder.svg?react";
+import ReadMe from "/home/enzo/Programming/personal-portfolio/personal-portfolio/src/assets/readme.svg?react";
+import Src from "/home/enzo/Programming/personal-portfolio/personal-portfolio/src/assets/folder-src.svg?react";
+import Components from "/home/enzo/Programming/personal-portfolio/personal-portfolio/src/assets/folder-components.svg?react";
+import { useState } from "react";
+import type { INode } from "../../types/node";
 
 export const FolderNavigationBar = () => {
-  const { node } = useDirectoryTreeContext();
+  const { node, dfsTree } = useDirectoryTreeContext();
 
-  function dfsTree(root: INode): { node: INode; level: number }[] | undefined {
-    if (!root) return;
+  const [flatNodes] = useState(dfsTree(node));
 
-    const result: { node: INode; level: number }[] = [];
+  const [currentExpandLevel, setCurrentExpandLevel] = useState<number | null>(
+    null
+  );
 
-    const stack = [{ node: root, level: 0 }];
+  const handleOnclick = (node: INode, level: number) => {
+    if (node.type != "folder") return;
 
-    while (stack.length > 0) {
-      const { node, level } = stack.pop()!;
-
-      result.push({ node, level });
-
-      console.log(node?.name);
-
-      if (node?.children) {
-        for (let i = node?.children?.length - 1; i >= 0; i--) {
-          stack.push({ node: node.children[i], level: level + 1 });
-        }
-      }
+    if (currentExpandLevel === level) {
+      setCurrentExpandLevel(null);
+    } else {
+      setCurrentExpandLevel(level);
     }
-    return result;
-  }
+  };
 
-  const flatNodes = dfsTree(node);
+  const icons = {
+    tsx: <ReactTs className="h-4 inline items-center mr-2" />,
+    folder: <Folder className="h-4 inline items-center mr-2" />,
+    readme: <ReadMe className="h-4 inline items-center mr-2" />,
+    src: <Src className="h-4 inline items-center mr-2" />,
+    components: <Components className="h-4 inline items-center mr-2" />,
+  };
+
   return (
     <div className="h-full flex-col">
-      {flatNodes &&
-        flatNodes.map(({ node, level }) => {
-          return (
-            <div className={`flex w-full h-7 ${"pl-" + level * 2}`}>
-              <button className="cursor-pointer  w-full text-start ">
-                {node.type === "folder" ? (
-                  <ChevronDown className="inline mr-1.5" />
-                ) : (
-                  ""
-                )}
-                {node.name}
-              </button>
-            </div>
-          );
-        })}
+      <ul>
+        {flatNodes &&
+          flatNodes.map(({ node, level }, id) => {
+            return (
+              <li
+                key={id}
+                className={`flex w-full h-7 ${
+                  currentExpandLevel != null && level > currentExpandLevel
+                    ? "hidden"
+                    : "block"
+                }`}
+                style={{ paddingLeft: level + "rem" }}
+                onClick={() => handleOnclick(node, level)}
+              >
+                <button className="cursor-pointer  w-full text-start ">
+                  {node.type === "folder" ? (
+                    <ChevronDown className="inline" />
+                  ) : (
+                    ""
+                  )}
+                  {node.iconType && icons[node.iconType]}
+                  {node.name}
+                </button>
+              </li>
+            );
+          })}
+      </ul>
     </div>
   );
 };

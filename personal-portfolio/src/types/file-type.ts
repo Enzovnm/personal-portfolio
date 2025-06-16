@@ -1,1 +1,1 @@
-export type FileType = "tsx" | "image" | "folder" | "readme";
+export type FileType = "tsx" | "folder" | "readme";
