@@ -1,17 +1,13 @@
 import { useDirectoryTreeContext } from "../../hooks/useDirectoryTreeContext";
 import ChevronDown from "/home/enzo/Programming/personal-portfolio/personal-portfolio/src/assets/chevron-down.svg?react";
-import ReactTs from "/home/enzo/Programming/personal-portfolio/personal-portfolio/src/assets/react_ts.svg?react";
-import Folder from "/home/enzo/Programming/personal-portfolio/personal-portfolio/src/assets/folder.svg?react";
-import ReadMe from "/home/enzo/Programming/personal-portfolio/personal-portfolio/src/assets/readme.svg?react";
-import Src from "/home/enzo/Programming/personal-portfolio/personal-portfolio/src/assets/folder-src.svg?react";
-import Components from "/home/enzo/Programming/personal-portfolio/personal-portfolio/src/assets/folder-components.svg?react";
+
 import { useState } from "react";
 import type { INode } from "../../types/node";
 
 export const FolderNavigationBar = () => {
-  const { node, dfsTree } = useDirectoryTreeContext();
+  const { node } = useDirectoryTreeContext();
 
-  const [flatNodes] = useState(dfsTree(node));
+  const flatNodes = node;
 
   const [currentExpandLevel, setCurrentExpandLevel] = useState<number | null>(
     null
@@ -25,14 +21,6 @@ export const FolderNavigationBar = () => {
     } else {
       setCurrentExpandLevel(level);
     }
-  };
-
-  const icons = {
-    tsx: <ReactTs className="h-4 inline items-center mr-2" />,
-    folder: <Folder className="h-4 inline items-center mr-2" />,
-    readme: <ReadMe className="h-4 inline items-center mr-2" />,
-    src: <Src className="h-4 inline items-center mr-2" />,
-    components: <Components className="h-4 inline items-center mr-2" />,
   };
 
   return (
@@ -57,7 +45,7 @@ export const FolderNavigationBar = () => {
                   ) : (
                     ""
                   )}
-                  {node.iconType && icons[node.iconType]}
+                  {node.icon}
                   {node.name}
                 </button>
               </li>

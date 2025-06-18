@@ -1,3 +1,5 @@
 export const Tab = () => {
-  return <button>MainContent.tsx ss</button>;
+
+  
+  return <button className="pl-4 pr-7">MainContent.tsx</button>;
 };
