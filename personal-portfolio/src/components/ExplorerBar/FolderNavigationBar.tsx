@@ -45,7 +45,7 @@ export const FolderNavigationBar = () => {
                   ) : (
                     ""
                   )}
-                  {node.icon}
+                  <span className="mr-2">{node.icon}</span>
                   {node.name}
                 </button>
               </li>

@@ -39,11 +39,11 @@ export const DirectoryThreeContextProvider = ({
   const [tree, setTree] = useState<INodeContextValueLevel[]>([]);
 
   const icons = {
-    tsx: <ReactTs className="h-4 inline items-center mr-2" />,
-    readme: <ReadMe className="h-4 inline items-center mr-2" />,
-    src: <Src className="h-4 inline items-center mr-2" />,
-    components: <Components className="h-4 inline items-center mr-2" />,
-    folder: <Folder className="h-4 inline items-center mr-2" />,
+    tsx: <ReactTs className="h-4 inline items-center" />,
+    readme: <ReadMe className="h-4 inline items-center" />,
+    src: <Src className="h-4 inline items-center" />,
+    components: <Components className="h-4 inline items-center" />,
+    folder: <Folder className="h-4 inline items-center" />,
   };
 
   function addIcon(node: INode): ReactNode {
