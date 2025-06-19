@@ -1,24 +1,18 @@
-import type { INodeContextValueLevel } from "../../types/node-context-value-level";
+import type { ReactNode } from "react";
 
 interface ITabProps {
-  nodes: INodeContextValueLevel[];
+  label: string;
+  icon?: ReactNode;
+  className?: string;
 }
 
-export const Tab = ({ nodes }: ITabProps) => {
+export const Tab = ({ label, icon, className }: ITabProps) => {
   return (
-    <div className="flex items-center">
-      {nodes.map(({ node }, index) => {
-        if (node.type !== "folder")
-          return (
-            <button
-              className={`pr-8 border-r-1  h-full border-r-zinc-900 ${
-                index > 0 ? "pl-3" : "pl-0"
-              }`}
-            >
-              <span className="mr-0.5">{node.icon}</span> {node.name}
-            </button>
-          );
-      })}
-    </div>
+    <li className={className}>
+      <button className="leading-36 pr-8">
+        <span className="mr-1">{icon}</span>
+        {label}
+      </button>
+    </li>
   );
 };
