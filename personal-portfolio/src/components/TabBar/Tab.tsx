@@ -7,11 +7,15 @@ interface ITabProps {
 export const Tab = ({ nodes }: ITabProps) => {
   return (
     <div className="flex items-center">
-      {nodes.map(({ node }) => {
+      {nodes.map(({ node }, index) => {
         if (node.type !== "folder")
           return (
-            <button>
-              {node.icon} {node.name}
+            <button
+              className={`pr-8 border-r-1  h-full border-r-zinc-900 ${
+                index > 0 ? "pl-3" : "pl-0"
+              }`}
+            >
+              <span className="mr-0.5">{node.icon}</span> {node.name}
             </button>
           );
       })}
