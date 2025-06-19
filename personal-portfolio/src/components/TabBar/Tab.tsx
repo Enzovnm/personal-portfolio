@@ -1,5 +1,20 @@
-export const Tab = () => {
+import type { INodeContextValueLevel } from "../../types/node-context-value-level";
 
-  
-  return <button className="pl-4 pr-7">MainContent.tsx</button>;
+interface ITabProps {
+  nodes: INodeContextValueLevel[];
+}
+
+export const Tab = ({ nodes }: ITabProps) => {
+  return (
+    <div className="flex items-center">
+      {nodes.map(({ node }) => {
+        if (node.type !== "folder")
+          return (
+            <button>
+              {node.icon} {node.name}
+            </button>
+          );
+      })}
+    </div>
+  );
 };

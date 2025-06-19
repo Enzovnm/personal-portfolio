@@ -13,7 +13,7 @@ export const FolderNavigationBar = () => {
     null
   );
 
-  const handleOnclick = (node: INode, level: number) => {
+  const handleCurrentExpandLevel = (node: INode, level: number) => {
     if (node.type != "folder") return;
 
     if (currentExpandLevel === level) {
@@ -37,7 +37,7 @@ export const FolderNavigationBar = () => {
                     : "block"
                 }`}
                 style={{ paddingLeft: level + "rem" }}
-                onClick={() => handleOnclick(node, level)}
+                onClick={() => handleCurrentExpandLevel(node, level)}
               >
                 <button className="cursor-pointer  w-full text-start ">
                   {node.type === "folder" ? (

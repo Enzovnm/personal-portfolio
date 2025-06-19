@@ -1,3 +1,3 @@
 export const MainContent = () => {
-  return <div></div>;
+  return <main className="bg-dracula h-full"></main>;
 };

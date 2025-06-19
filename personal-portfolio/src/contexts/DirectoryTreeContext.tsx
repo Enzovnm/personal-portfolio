@@ -12,13 +12,15 @@ import ReadMe from "/home/enzo/Programming/personal-portfolio/personal-portfolio
 import Src from "/home/enzo/Programming/personal-portfolio/personal-portfolio/src/assets/folder-src.svg?react";
 import Components from "/home/enzo/Programming/personal-portfolio/personal-portfolio/src/assets/folder-components.svg?react";
 import { treeAdapter } from "../utils/TreeAdapter";
+import type { INodeContextValueLevel } from "../types/node-context-value-level";
 
 interface IDirectoryTreeContext {
-  node: { node: INodeContextValue; level: number }[];
+  node: INodeContextValueLevel[];
   dfsTree: (node: INodeContextValue | undefined) => void;
 }
 
 export interface INodeContextValue extends INode {
+  isExpanse: boolean;
   isSelected?: boolean;
   level?: number;
   icon?: ReactNode;
@@ -34,9 +36,7 @@ export const DirectoryThreeContextProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [tree, setTree] = useState<
-    { node: INodeContextValue; level: number }[]
-  >([]);
+  const [tree, setTree] = useState<INodeContextValueLevel[]>([]);
 
   const icons = {
     tsx: <ReactTs className="h-4 inline items-center mr-2" />,
@@ -45,7 +45,7 @@ export const DirectoryThreeContextProvider = ({
     components: <Components className="h-4 inline items-center mr-2" />,
     folder: <Folder className="h-4 inline items-center mr-2" />,
   };
-  
+
   function addIcon(node: INode): ReactNode {
     if (node.iconType) {
       return icons[node.iconType];
