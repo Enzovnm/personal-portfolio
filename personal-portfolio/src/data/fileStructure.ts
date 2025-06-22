@@ -8,43 +8,43 @@ export const fileStructure: INode = {
 
   children: [
     {
-      id: 1,
+      id: 2,
       name: "src",
       type: "folder",
       iconType: "src",
       children: [
         {
-          id: 2,
+          id: 3,
           name: "components",
           type: "folder",
           iconType: "components",
           children: [
             {
-              id: 3,
+              id: 4,
               name: "AboutMe.tsx",
               type: "tsx",
               iconType: "tsx",
             },
             {
-              id: 4,
+              id: 5,
               name: "Carrer.tsx",
               type: "tsx",
               iconType: "tsx",
             },
             {
-              id: 5,
+              id: 6,
               name: "Technologies.tsx",
               type: "tsx",
               iconType: "tsx",
             },
             {
-              id: 6,
+              id: 7,
               name: "Projects.tsx",
               type: "tsx",
               iconType: "tsx",
             },
             {
-              id: 7,
+              id: 8,
               name: "ContactMe.tsx",
               type: "tsx",
               iconType: "tsx",
@@ -54,13 +54,13 @@ export const fileStructure: INode = {
       ],
     },
     {
-      id: 8,
+      id: 9,
       name: "README.md",
       type: "readme",
       iconType: "readme",
     },
     {
-      id: 9,
+      id: 10,
       name: "CREDITS.md",
       type: "readme",
       iconType: "readme",

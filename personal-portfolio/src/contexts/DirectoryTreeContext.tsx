@@ -16,12 +16,14 @@ import type { INodeContextValueLevel } from "../types/node-context-value-level";
 
 interface IDirectoryTreeContext {
   node: INodeContextValueLevel[];
+  collapseAll: () => void;
+  toggleFolder: (nodeId: number) => void;
   dfsTree: (node: INodeContextValue | undefined) => void;
 }
 
 export interface INodeContextValue extends INode {
-  isExpanse: boolean;
-  isSelected?: boolean;
+  isVisible?: boolean;
+  isExpanded?: boolean;
   level?: number;
   icon?: ReactNode;
   children?: INodeContextValue[];
@@ -64,6 +66,12 @@ export const DirectoryThreeContextProvider = ({
 
       node.icon = addIcon(node);
 
+      node.isVisible = true;
+
+      if (node.type === "folder") {
+        node.isExpanded = true;
+      }
+
       result.push({ node, level });
 
       if (node.children) {
@@ -79,13 +87,65 @@ export const DirectoryThreeContextProvider = ({
     setTree(result);
   }
 
+  const collapseAll = () => {
+    const updatedTree: INodeContextValueLevel[] = tree.map(
+      ({ node, level }) => ({
+        node: { ...node, isVisible: level === 0 ? true : false },
+        level,
+      })
+    );
+    setTree(updatedTree);
+  };
+
+  const toggleFolder = (nodeId: number) => {
+    const updatedTree = tree.map(({ node, level }) => {
+      if (node.id === nodeId) {
+        return {
+          node: {
+            ...node,
+            isExpanded: !node.isExpanded,
+          },
+          level,
+        };
+      }
+      return { node, level };
+    });
+
+    const targetNode = updatedTree.find(({ node }) => node.id === nodeId);
+    if (!targetNode) return;
+
+    const targetLevel = targetNode.level;
+
+    const newTree = updatedTree.map(({ node, level }) => {
+      if (level > targetLevel) {
+        return {
+          node: {
+            ...node,
+            isVisible: targetNode.node.isExpanded ? true : false,
+          },
+          level,
+        };
+      }
+      return { node, level };
+    });
+
+    setTree(newTree);
+  };
+
   useEffect(() => {
     const adapted = treeAdapter(fileStructure);
     dfsTree(adapted);
   }, []);
 
   return (
-    <DirectoryTreeContext.Provider value={{ node: tree, dfsTree }}>
+    <DirectoryTreeContext.Provider
+      value={{
+        node: tree,
+        dfsTree,
+        collapseAll,
+        toggleFolder,
+      }}
+    >
       {children}
     </DirectoryTreeContext.Provider>
   );

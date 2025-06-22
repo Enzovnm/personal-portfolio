@@ -13,7 +13,12 @@ export const TabBar = () => {
           }`;
           if (node.type !== "folder")
             return (
-              <Tab label={node.name} icon={node.icon} className={className} />
+              <Tab
+                key={index}
+                label={node.name}
+                icon={node.icon}
+                className={className}
+              />
             );
         })}
       </ul>
