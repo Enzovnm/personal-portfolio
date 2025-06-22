@@ -84,7 +84,6 @@ export const DirectoryThreeContextProvider = ({
     dfsTree(adapted);
   }, []);
 
-  console.log(tree);
   return (
     <DirectoryTreeContext.Provider value={{ node: tree, dfsTree }}>
       {children}
