@@ -24,6 +24,7 @@ interface IDirectoryTreeContext {
 export interface INodeContextValue extends INode {
   isVisible?: boolean;
   isExpanded?: boolean;
+  isCollapseAll?: boolean;
   level?: number;
   icon?: ReactNode;
   children?: INodeContextValue[];
@@ -90,10 +91,19 @@ export const DirectoryThreeContextProvider = ({
   const collapseAll = () => {
     const updatedTree: INodeContextValueLevel[] = tree.map(
       ({ node, level }) => ({
-        node: { ...node, isVisible: level === 0 ? true : false },
+        node: {
+          ...node,
+          isVisible: level === 0 ? true : false,
+          isExpanded: false,
+        },
         level,
       })
     );
+
+    updatedTree[0].node.isCollapseAll = true;
+
+    console.log("ColapseAll updatedTree", updatedTree);
+
     setTree(updatedTree);
   };
 
@@ -111,8 +121,18 @@ export const DirectoryThreeContextProvider = ({
       return { node, level };
     });
 
+    const nodeRef = tree.find(({ node }) => node.id === nodeId);
+    if (!nodeRef) return;
+
+    if (nodeRef.node.isCollapseAll) {
+      nodeRef.node.isCollapseAll = !nodeRef.node.isCollapseAll;
+      return;
+    }
+
     const targetNode = updatedTree.find(({ node }) => node.id === nodeId);
     if (!targetNode) return;
+
+    console.log("passou");
 
     const targetLevel = targetNode.level;
 
