@@ -100,9 +100,11 @@ export const DirectoryThreeContextProvider = ({
       })
     );
 
-    updatedTree[0].node.isCollapseAll = true;
+    const targetNode = updatedTree.find((node) => node.level === 0);
 
-    console.log("ColapseAll updatedTree", updatedTree);
+    if (targetNode) {
+      targetNode.node.isCollapseAll = true;
+    }
 
     setTree(updatedTree);
   };
@@ -121,18 +123,8 @@ export const DirectoryThreeContextProvider = ({
       return { node, level };
     });
 
-    const nodeRef = tree.find(({ node }) => node.id === nodeId);
-    if (!nodeRef) return;
-
-    if (nodeRef.node.isCollapseAll) {
-      nodeRef.node.isCollapseAll = !nodeRef.node.isCollapseAll;
-      return;
-    }
-
     const targetNode = updatedTree.find(({ node }) => node.id === nodeId);
     if (!targetNode) return;
-
-    console.log("passou");
 
     const targetLevel = targetNode.level;
 
@@ -142,12 +134,16 @@ export const DirectoryThreeContextProvider = ({
           node: {
             ...node,
             isVisible: targetNode.node.isExpanded ? true : false,
+            isExpanded: targetNode.node.isCollapseAll ? true : node.isExpanded,
           },
           level,
         };
       }
       return { node, level };
     });
+
+    // eslint-disable-next-line no-debugger
+    debugger;
 
     setTree(newTree);
   };
