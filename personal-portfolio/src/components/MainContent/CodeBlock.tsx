@@ -13,6 +13,7 @@ AboutMe();`;
 
 export const CodeBlock = () => {
   const [displayedCode, setDisplayedCode] = useState("");
+  const [currentLine, setCurrentLine] = useState(0);
 
   useEffect(() => {
     let currentIndex = 0;
@@ -22,6 +23,8 @@ export const CodeBlock = () => {
         fullCode.slice(0, currentIndex) +
           `${currentIndex < fullCode.length - 1 ? "|" : ""}`
       );
+
+      setCurrentLine(fullCode.slice(0, currentIndex).split("\n").length - 1);
       if (currentIndex >= fullCode.length) {
         return;
       }
@@ -36,6 +39,13 @@ export const CodeBlock = () => {
         <pre className={className} style={{ ...style, minHeight: "100px" }}>
           {tokens.map((line, i) => (
             <div key={i} {...getLineProps({ line })}>
+              <span
+                className={`w-16 px-8 ${
+                  i === currentLine ? "text-white" : "text-gutter"
+                }`}
+              >
+                {i + 1}
+              </span>
               {line.map((token, key) => (
                 <span key={key} {...getTokenProps({ token })} />
               ))}
