@@ -11,12 +11,11 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.8",
-    "@types/prismjs": "^1.26.5",
-    "dracula-prism": "^2.1.16",
-    "prismjs": "^1.30.0",
+    "prism-react-renderer": "^2.4.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "tailwindcss": "^4.1.8"
+    "tailwindcss": "^4.1.8",
+    "typewriter-effect": "^2.22.0"
   },
   "devDependencies": {
     "@babel/types": "^7.27.6",

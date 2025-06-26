@@ -142,9 +142,6 @@ export const DirectoryThreeContextProvider = ({
       return { node, level };
     });
 
-    // eslint-disable-next-line no-debugger
-    debugger;
-
     setTree(newTree);
   };
 
