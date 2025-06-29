@@ -5,5 +5,5 @@ interface ModalContentProps {
 }
 
 export const ModalContent = ({ children }: ModalContentProps) => {
-  return <section className="w-full h-full p-7">{children}</section>;
+  return <section className="w-full h-full p-16">{children}</section>;
 };

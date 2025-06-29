@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Highlight, themes } from "prism-react-renderer";
 
 const fullCode = `export const AboutMe = () => ({
@@ -6,7 +6,6 @@ const fullCode = `export const AboutMe = () => ({
   role: "Software Engineer @Albato",
   techStack: ["React", "Node.js", "Prisma"],
   currentlyLearning: ["Clean Architecture", "AI APIs"],
-  funFact: "Soccer",
 });
 
 AboutMe();`;

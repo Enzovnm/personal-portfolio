@@ -2,16 +2,39 @@ import imgUrl from "../../assets/me.png";
 
 export const AboutMe = () => {
   return (
-    <div className="flex h-full w-full">
-      <div className="  w-1/2">
-        <div className="w-80 h-80 rounded-full">
+    <div className="flex h-full pt-12 w-full">
+      <div className=" flex justify-center w-1/2">
+        <div className="w-96 h-96 rounded-full">
           <img
             className="w-full h-full rounded-full object-cover "
             src={imgUrl}
           />
         </div>
       </div>
-      <div className=" w-1/2">ds</div>
+      <div className="text-4xl w-1/2">
+        <h1 className="">Hi, my name is Enzo! 👋</h1>
+        <div className="mt-9 ">
+          <h2 className="text-3xl text">About me:</h2>
+          <ul className="text-2xl mt-9 space-y-9 text-justify list-disc ">
+            <li>
+              I'm a passionate programmer, driven by the understanding and
+              reflection on contemporary challenges, as well as by the planning
+              and construction of efficient algorithms to solve them.
+            </li>
+            <li>
+              I began my journey in programming at the age of 16, when I wrote
+              my first "Hello, world" in Python 😆. Around that time, I also
+              built my first computer. These were my first steps into the
+              physical and logical world of computing, which turned me into a
+              lifelong learner and enthusiast of the field.
+            </li>
+            <li>Specialist in software automation.</li>
+            <li>
+              Currently in the final semester of my Computer Science degree.
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };
