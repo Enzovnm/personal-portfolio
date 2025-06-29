@@ -1,14 +1,24 @@
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import imgUrl from "../../assets/me.png";
+import { BiLogoGmail } from "react-icons/bi";
 
 export const AboutMe = () => {
   return (
     <div className="flex h-full pt-12 w-full">
-      <div className=" flex justify-center w-1/2">
+      <div className=" flex flex-col items-center w-1/2">
         <div className="w-96 h-96 rounded-full">
           <img
             className="w-full h-full rounded-full object-cover "
             src={imgUrl}
           />
+        </div>
+        <h3 className="text-2xl text-center mt-8">
+          Software developer @Albato
+        </h3>
+        <div className="flex gap-2 mt-8">
+          <a href=""><FaLinkedin className="w-10 h-10" /></a>
+          <a href=""><FaGithub className="w-10 h-10" /></a>
+          <a href=""><BiLogoGmail className="w-10 h-10" /></a>
         </div>
       </div>
       <div className="text-4xl w-1/2">
