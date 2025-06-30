@@ -19,6 +19,10 @@ interface IDirectoryTreeContext {
   collapseAll: () => void;
   toggleFolder: (nodeId: number) => void;
   dfsTree: (node: INodeContextValue | undefined) => void;
+  fileSelected: INodeContextValue | null;
+  setFileSelected: React.Dispatch<
+    React.SetStateAction<INodeContextValue | null>
+  >;
 }
 
 export interface INodeContextValue extends INode {
@@ -28,6 +32,7 @@ export interface INodeContextValue extends INode {
   level?: number;
   icon?: ReactNode;
   children?: INodeContextValue[];
+  selected: boolean;
 }
 
 export const DirectoryTreeContext = createContext<IDirectoryTreeContext>(
@@ -40,6 +45,10 @@ export const DirectoryThreeContextProvider = ({
   children: React.ReactNode;
 }) => {
   const [tree, setTree] = useState<INodeContextValueLevel[]>([]);
+
+  const [fileSelected, setFileSelected] = useState<INodeContextValue | null>(
+    null
+  );
 
   const icons = {
     tsx: <ReactTs className="h-4 inline items-center" />,
@@ -68,6 +77,11 @@ export const DirectoryThreeContextProvider = ({
       node.icon = addIcon(node);
 
       node.isVisible = true;
+
+      if (node.name === "AboutMe.tsx") {
+        node.selected = true;
+        setFileSelected(node);
+      }
 
       if (node.type === "folder") {
         node.isExpanded = true;
@@ -157,6 +171,8 @@ export const DirectoryThreeContextProvider = ({
         dfsTree,
         collapseAll,
         toggleFolder,
+        fileSelected,
+        setFileSelected,
       }}
     >
       {children}

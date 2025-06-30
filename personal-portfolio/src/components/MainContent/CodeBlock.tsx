@@ -1,36 +1,33 @@
 import { useState, useEffect } from "react";
 import { Highlight, themes } from "prism-react-renderer";
-
-const fullCode = `export const AboutMe = () => ({
-  name: "Enzo Monteiro",
-  role: "Software Engineer @Albato",
-  techStack: ["React", "Node.js", "Prisma"],
-  currentlyLearning: ["Clean Architecture", "AI APIs"],
-});
-
-AboutMe();`;
+import { useCodeContext } from "../../hooks/useCodeContext";
 
 export const CodeBlock = () => {
   const [displayedCode, setDisplayedCode] = useState("");
   const [currentLine, setCurrentLine] = useState(0);
 
+  const { code } = useCodeContext();
+
   useEffect(() => {
     let currentIndex = 0;
-    const interval = setInterval(() => {
-      currentIndex++;
-      setDisplayedCode(
-        fullCode.slice(0, currentIndex) +
-          `${currentIndex < fullCode.length - 1 ? "|" : ""}`
-      );
 
-      setCurrentLine(fullCode.slice(0, currentIndex).split("\n").length - 1);
-      if (currentIndex >= fullCode.length) {
-        return;
-      }
-    }, 65);
+    if (code?.text) {
+      const interval = setInterval(() => {
+        currentIndex++;
+        setDisplayedCode(
+          code.text.slice(0, currentIndex) +
+            `${currentIndex < code?.text.length - 1 ? "|" : ""}`
+        );
 
-    return () => clearInterval(interval);
-  }, []);
+        setCurrentLine(code.text.slice(0, currentIndex).split("\n").length - 1);
+        if (currentIndex >= code.text.length) {
+          return;
+        }
+      }, 65);
+
+      return () => clearInterval(interval);
+    }
+  }, [code]);
 
   return (
     <Highlight code={displayedCode} theme={themes.dracula} language="tsx">
