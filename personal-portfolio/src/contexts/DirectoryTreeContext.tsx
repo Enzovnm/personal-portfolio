@@ -20,9 +20,7 @@ interface IDirectoryTreeContext {
   toggleFolder: (nodeId: number) => void;
   dfsTree: (node: INodeContextValue | undefined) => void;
   fileSelected: INodeContextValue | null;
-  setFileSelected: React.Dispatch<
-    React.SetStateAction<INodeContextValue | null>
-  >;
+  handleFileSelected: (node: INodeContextValue) => void;
 }
 
 export interface INodeContextValue extends INode {
@@ -58,12 +56,32 @@ export const DirectoryThreeContextProvider = ({
     folder: <Folder className="h-4 inline items-center" />,
   };
 
+  console.table(tree);
+
   function addIcon(node: INode): ReactNode {
     if (node.iconType) {
       return icons[node.iconType];
     }
     return null;
   }
+
+  const handleFileSelected = (node: INodeContextValue) => {
+    console.log("node", node);
+    if (node.type !== "folder") {
+      const currentlSelectedFile: INodeContextValueLevel[] = tree.filter(
+        (element) => {
+          return element.node.selected === true;
+        }
+      );
+      currentlSelectedFile.forEach((element) => {
+        element.node.selected = false;
+      });
+
+      setFileSelected(node);
+      node.selected = true;
+      console.log(fileSelected);
+    }
+  };
 
   function dfsTree(root: INodeContextValue | undefined): void {
     if (!root) return;
@@ -172,7 +190,7 @@ export const DirectoryThreeContextProvider = ({
         collapseAll,
         toggleFolder,
         fileSelected,
-        setFileSelected,
+        handleFileSelected,
       }}
     >
       {children}

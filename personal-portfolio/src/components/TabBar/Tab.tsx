@@ -9,7 +9,7 @@ interface ITabProps {
 export const Tab = ({ label, icon, className }: ITabProps) => {
   return (
     <li className={className}>
-      <button className="leading-36 pr-8">
+      <button className="leading-36 cursor-pointer pr-8">
         <span className="mr-1">{icon}</span>
         {label}
       </button>

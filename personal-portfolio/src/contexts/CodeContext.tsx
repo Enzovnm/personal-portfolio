@@ -22,10 +22,7 @@ export const CodeContextProvider = ({ children }: { children: ReactNode }) => {
 
   const { fileSelected } = useDirectoryTreeContext();
 
-  console.log(code);
-
   function setCurrentCode(node: INodeContextValue) {
-    console.log(node);
     switch (node.name) {
       case "AboutMe.tsx":
         setCode({ text: aboutMe });
