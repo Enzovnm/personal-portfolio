@@ -2,8 +2,7 @@ import { useDirectoryTreeContext } from "../../hooks/useDirectoryTreeContext";
 import { Tab } from "./Tab";
 
 export const TabBar = () => {
-  const { node } = useDirectoryTreeContext();
-
+  const { node, handleFileSelected } = useDirectoryTreeContext();
 
   return (
     <nav className="max-h-9 h-full w-full bg-slate-black text-sm flex">
@@ -21,6 +20,7 @@ export const TabBar = () => {
                 label={node.name}
                 icon={node.icon}
                 className={className}
+                onClick={() => handleFileSelected(node)}
               />
             );
         })}
