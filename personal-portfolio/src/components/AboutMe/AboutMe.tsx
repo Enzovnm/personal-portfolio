@@ -1,6 +1,7 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import imgUrl from "../../assets/me.png";
 import { BiLogoGmail } from "react-icons/bi";
+import { motion } from "motion/react";
 
 export const AboutMe = () => {
   return (
@@ -16,13 +17,32 @@ export const AboutMe = () => {
           Software developer @Albato
         </h3>
         <div className="flex gap-2 mt-8">
-          <a href=""><FaLinkedin className="w-10 h-10" /></a>
-          <a href=""><FaGithub className="w-10 h-10" /></a>
-          <a href=""><BiLogoGmail className="w-10 h-10" /></a>
+          <a href="">
+            <FaLinkedin className="w-10 h-10" />
+          </a>
+          <a href="">
+            <FaGithub className="w-10 h-10" />
+          </a>
+          <a href="">
+            <BiLogoGmail className="w-10 h-10" />
+          </a>
         </div>
       </div>
       <div className="text-4xl w-1/2">
-        <h1 className="">Hi, my name is Enzo! 👋</h1>
+        <h1 className="">
+          Hi, my name is Enzo!{" "}
+          <motion.span
+            animate={{ rotate: [0, 30, -10, 30, 0] }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="inline-block"
+          >
+            👋
+          </motion.span>
+        </h1>
         <div className="mt-9 ">
           <h2 className="text-3xl text">About me:</h2>
           <ul className="text-2xl mt-9 space-y-9 text-justify list-disc ">

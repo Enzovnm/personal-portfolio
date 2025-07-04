@@ -4,9 +4,11 @@ import { useCodeContext } from "../../hooks/useCodeContext";
 
 interface ICodeBlockProps {
   onFinish: () => void;
+  onStart: () => void;
 }
 
-export const CodeBlock = ({onFinish} : ICodeBlockProps) => {
+export const CodeBlock = ({ onFinish, onStart }: ICodeBlockProps) => {
+  console.log("renderizou code block");
   const [displayedCode, setDisplayedCode] = useState<string>("");
   const [currentLine, setCurrentLine] = useState<number>(0);
 
@@ -14,21 +16,27 @@ export const CodeBlock = ({onFinish} : ICodeBlockProps) => {
 
   useEffect(() => {
     let currentIndex = 0;
+    let hasFinished = false;
+
+    onStart();
 
     if (code?.text) {
       const interval = setInterval(() => {
         currentIndex++;
+
         setDisplayedCode(
           code.text.slice(0, currentIndex) +
-            `${currentIndex < code?.text.length - 1 ? "|" : ""}`
+            `${currentIndex < code.text.length - 1 ? "|" : ""}`
         );
 
         setCurrentLine(code.text.slice(0, currentIndex).split("\n").length - 1);
-        if (currentIndex >= code.text.length) {
+
+        if (currentIndex >= code.text.length && !hasFinished) {
+          hasFinished = true;
           onFinish();
-          return;
+          clearInterval(interval);
         }
-      }, 45);
+      }, 35);
 
       return () => clearInterval(interval);
     }

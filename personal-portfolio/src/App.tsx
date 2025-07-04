@@ -10,7 +10,7 @@ export function App() {
     <>
       <DirectoryThreeContextProvider>
         <CodeContextProvider>
-          <TitleBar />
+          <TitleBar type="screen" />
           <div className="h-full flex">
             <ExplorerBar />
             <div className="flex flex-col w-full">
