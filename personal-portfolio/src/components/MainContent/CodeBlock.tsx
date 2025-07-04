@@ -2,9 +2,13 @@ import { useState, useEffect } from "react";
 import { Highlight, themes } from "prism-react-renderer";
 import { useCodeContext } from "../../hooks/useCodeContext";
 
-export const CodeBlock = () => {
-  const [displayedCode, setDisplayedCode] = useState("");
-  const [currentLine, setCurrentLine] = useState(0);
+interface ICodeBlockProps {
+  onFinish: () => void;
+}
+
+export const CodeBlock = ({onFinish} : ICodeBlockProps) => {
+  const [displayedCode, setDisplayedCode] = useState<string>("");
+  const [currentLine, setCurrentLine] = useState<number>(0);
 
   const { code } = useCodeContext();
 
@@ -21,9 +25,10 @@ export const CodeBlock = () => {
 
         setCurrentLine(code.text.slice(0, currentIndex).split("\n").length - 1);
         if (currentIndex >= code.text.length) {
+          onFinish();
           return;
         }
-      }, 65);
+      }, 45);
 
       return () => clearInterval(interval);
     }
