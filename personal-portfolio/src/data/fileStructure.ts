@@ -27,7 +27,7 @@ export const fileStructure: INode = {
             },
             {
               id: 5,
-              name: "Carrer.tsx",
+              name: "Journey.tsx",
               type: "tsx",
               iconType: "tsx",
             },

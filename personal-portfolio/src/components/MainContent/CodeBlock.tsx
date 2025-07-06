@@ -8,7 +8,6 @@ interface ICodeBlockProps {
 }
 
 export const CodeBlock = ({ onFinish, onStart }: ICodeBlockProps) => {
-  console.log("renderizou code block");
   const [displayedCode, setDisplayedCode] = useState<string>("");
   const [currentLine, setCurrentLine] = useState<number>(0);
 
