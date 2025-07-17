@@ -9,3 +9,16 @@
   --font-fira-code: "Fira Code", arial;
   --color-gutter: #333768;
 }
+
+@layer utilities {
+  .triangle-before {
+    @apply relative;
+  }
+
+  .triangle-before::before {
+    content: "";
+    @apply absolute w-0 h-0 border-solid border-transparent rotate-[270deg];
+    border-width: 0 100px 150px 100px;
+    border-bottom-color: #ff4532;
+  }
+}

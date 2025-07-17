@@ -3,7 +3,7 @@ export const Journey = () => {
     <div className="w-full h-full flex justify-center">
       <div className="w-10/12 h-full flex justify-center ">
         <ul className="before:content-[''] before:h-full before:w-1 relative before:absolute before:bg-pink-500">
-          <li className="absolute before:content-[''] before:bg-slate-blue-explorer before:w-3 before:h-8 before:-z-0 before:-left-2.5 bg- before:absolute left-3.5 w-96 h-80 bg-slate-blue-explorer p-4 rounded-xl text-white">
+          <li className="before:content-[''] before:border-r-[10px] before:border-b-[20px] before:border-l-[10px] before:border-t-transparent before:border-r-transparent before:border-b-slate-blue-explorer before:border-l-transparent before:-rotate-90 before:h-8 before:-z-0 before:absolute before:-left-3.5 absolute  left-3.5 w-96 h-80 bg-slate-blue-explorer p-4 rounded-xl text-white">
             <div className="flex items-center justify-between w-full">
               <h1 className="text-xl font-bold">School: Giordano</h1>
               <p>2019</p>
