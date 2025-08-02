@@ -1,94 +1,95 @@
 import basilidesLogo from "../../assets/basilides_logo.png";
 import giordanoLogo from "../../assets/giordano_logo.png";
 import wiseupLogo from "../../assets/wiseup_logo.png";
+import unipLogo from "../../assets/unip_logo.png";
+import albatoLogo from "../../assets/albato_logo.png";
+import { JourneyCard } from "./JourneyCard";
+import { motion } from "motion/react";
+
+const journey = [
+  {
+    title: "ETEC Prof° Basilides de Godoy",
+    logo: basilidesLogo,
+    description:
+      "I completed a technical course in Systems Analysis and Development, gaining experience in programming logic, Java/Android, .NET MVC, and database modeling with SQL Server. I was awarded best front-end developer in the course.",
+    subtitle: "Technical school",
+    year: "2020 ~ 2021",
+  },
+  {
+    title: "Giordano",
+    logo: giordanoLogo,
+    description:
+      "I completed high school at Colégio Giordano, where I acquired the fundamental knowledge of basic education.",
+    subtitle: "School",
+    year: "2021",
+  },
+  {
+    title: "Wiseup",
+    logo: wiseupLogo,
+    description:
+      "I completed the advanced English course at WiseUp, mastering writing, comprehension, and fluent communication—key skills for thriving in international professional environments.",
+    subtitle: "English language school",
+    year: "2019 ~ 2022",
+  },
+  {
+    title: "Universidade Paulista",
+    logo: unipLogo,
+    description:
+      "I am currently pursuing a Bachelor's degree in Computer Science at UNIP, gaining a comprehensive and solid foundation in core computing principles, covering everything from algorithms and data structures to software development and complex systems.",
+    subtitle: "College",
+    year: "2022 ~ Present",
+  },
+  {
+    title: "Albato",
+    logo: albatoLogo,
+    description:
+      "I work at Albato handling APIs and webhooks, developing integrations using the no-code Builder tool, and performing tests with Postman and other tools to ensure efficient automation.",
+    subtitle: "Builder engineer",
+    year: "2022 ~ Present",
+  },
+];
 
 export const Journey = () => {
   return (
-    <div className="w-full h-full flex justify-center">
-      <div className="w-10/12  h-[140vh] flex justify-center ">
+    <div className="w-full h-[150vh] flex justify-center ">
+      <div className="w-10/12 flex justify-center ">
         <ul className="before:content-[''] before:h-full before:w-1 relative before:absolute before:bg-pink-500">
-          <li className="before:content-[''] before:border-r-[10px] top-72 before:border-b-[20px] before:border-l-[10px] before:border-t-transparent before:border-r-transparent before:border-b-slate-blue-explorer before:border-l-transparent before:-rotate-90 before:h-8 before:-z-0 before:absolute before:-left-3.5 absolute  left-3.5 w-132 h-64 bg-slate-blue-explorer p-4 rounded-xl text-white">
-            <div className="flex items-center justify-between w-full">
-              <div className="h-12 w-12">
-                <img
-                  className="object-cover w-full h-full"
-                  src={giordanoLogo}
-                />
-              </div>
-              <h1 className="text-xl font-bold">School: Giordano</h1>
-              <p className="text-gray-400">2021</p>
-            </div>
-            <div className="mt-4">
-              <p className="text-justify">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Ratione cum recusandae ad enim? Illum accusamus quas odio libero
-                vel! Recusandae natus voluptate modi quisquam accusantium
-                voluptas consequatur excepturi ratione doloremque!
-              </p>
-            </div>
-          </li>
-          <li className="before:content-[''] before:border-r-[10px] before:border-b-[20px] before:border-l-[10px] before:border-t-transparent before:border-r-transparent before:border-b-slate-blue-explorer before:border-l-transparent before:rotate-90  before:h-8 before:-z-0 before:absolute before:-right-3.5 absolute  right-3.5 w-132 h-64 bg-slate-blue-explorer p-4 rounded-xl text-white">
-            <div className="flex items-center justify-between w-full">
-              <div className="h-12 w-12">
-                <img
-                  className="object-cover w-full h-full"
-                  src={basilidesLogo}
-                />
-              </div>
-              <h1 className="text-xl font-bold">
-                Technical School: <br />
-                ETEC Prof° Basilides de Godoy
-              </h1>
-              <p className="text-gray-400">2020~2021</p>
-            </div>
-            <div className="mt-4">
-              <p className="text-justify">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Ratione cum recusandae ad enim? Illum accusamus quas odio libero
-                vel! Recusandae natus voluptate modi quisquam accusantium
-                voluptas consequatur excepturi ratione doloremque!
-              </p>
-            </div>
-          </li>
-          <li className="before:content-[''] before:border-r-[10px] before:border-b-[20px] before:border-l-[10px] before:border-t-transparent before:border-r-transparent before:border-b-slate-blue-explorer before:border-l-transparent before:rotate-90  before:h-8 before:-z-0 before:absolute before:-right-3.5 absolute top-144 right-3.5 h-64 w-132 bg-slate-blue-explorer p-4 rounded-xl text-white">
-            <div className="flex items-center justify-between w-full">
-              <div className="h-12 w-12">
-                <img className="object-cover w-full h-full" src={wiseupLogo} />
-              </div>
-              <h1 className="text-xl font-bold">
-                English language school : <br />
-                Wiseup
-              </h1>
-              <p className="text-gray-400">2019~2022</p>
-            </div>
-            <div className="mt-4">
-              <p className="text-justify">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Ratione cum recusandae ad enim? Illum accusamus quas odio libero
-                vel! Recusandae natus voluptate modi quisquam accusantium
-                voluptas consequatur excepturi ratione doloremque!
-              </p>
-            </div>
-          </li>
-          <li className="before:content-[''] before:border-r-[10px] top-216 before:border-b-[20px] before:border-l-[10px] before:border-t-transparent before:border-r-transparent before:border-b-slate-blue-explorer before:border-l-transparent before:-rotate-90 before:h-8 before:-z-0 before:absolute before:-left-3.5 absolute  left-3.5 w-132 h-64 bg-slate-blue-explorer p-4 rounded-xl text-white">
-            <div className="flex items-start justify-between w-full">
-              <h1 className="text-xl font-bold">
-                College:
-                <br />
-                Universidade Paulista
-              </h1>
-              <p>2022 ~ Present</p>
-            </div>
-            <div className="mt-4">
-              <p className="text-justify">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Ratione cum recusandae ad enim? Illum accusamus quas odio libero
-                vel! Recusandae natus voluptate modi quisquam accusantium
-                voluptas consequatur excepturi ratione doloremque!
-              </p>
-            </div>
-          </li>
-          <li></li>
+          {journey.map(
+            ({ title, logo, description, subtitle, year }, index) => {
+              const topValue = 18 * index + "rem";
+              return (
+                <li
+                  key={index}
+                  style={{
+                    position: "absolute",
+                    top: topValue,
+                    ...(index % 2 === 0
+                      ? { right: "0.875rem" }
+                      : { left: "0.875rem" }),
+                  }}
+                >
+                  <motion.div
+                    initial={{
+                      x: index % 2 === 0 ? -200 : 200,
+                      opacity: 0,
+                    }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                  >
+                    <JourneyCard
+                      title={title}
+                      logo={logo}
+                      description={description}
+                      subtitle={subtitle}
+                      year={year}
+                      arrowDirection={`${index % 2 === 0 ? "right" : "left"}`}
+                      className="border-2 border-transparent hover:border-pink-500 hover:border-2"
+                    />
+                  </motion.div>
+                </li>
+              );
+            }
+          )}
         </ul>
       </div>
     </div>
