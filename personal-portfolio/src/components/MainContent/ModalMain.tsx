@@ -6,6 +6,7 @@ import { TitleBar } from "../TitleBar/TitleBar";
 import { ModalContent } from "./ModalContent";
 import { motion } from "motion/react";
 import type { INodeContextValue } from "../../contexts/DirectoryTreeContext";
+import { Technologies } from "../Technologies/Technologies";
 
 interface IModalMainProps {
   isOpen: boolean;
@@ -31,8 +32,12 @@ export const ModalMain = ({ isOpen, onClose }: IModalMainProps) => {
       case "Journey.tsx":
         content = <Journey />;
         break;
+      case "Technologies.tsx":
+        content = <Technologies />;
+        break;
       default:
         content = <div>Developing....</div>;
+        break;
     }
 
     return content;

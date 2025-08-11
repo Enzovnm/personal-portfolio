@@ -51,47 +51,50 @@ const journey = [
 
 export const Journey = () => {
   return (
-    <div className="w-full h-[150vh] flex justify-center ">
-      <div className="w-10/12 flex justify-center ">
-        <ul className="before:content-[''] before:h-full before:w-1 relative before:absolute before:bg-pink-500">
-          {journey.map(
-            ({ title, logo, description, subtitle, year }, index) => {
-              const topValue = 18 * index + "rem";
-              return (
-                <li
-                  key={index}
-                  style={{
-                    position: "absolute",
-                    top: topValue,
-                    ...(index % 2 === 0
-                      ? { right: "0.875rem" }
-                      : { left: "0.875rem" }),
-                  }}
-                >
-                  <motion.div
-                    initial={{
-                      x: index % 2 === 0 ? -200 : 200,
-                      opacity: 0,
+    <>
+      <h1 className="text-4xl text-center">Journey</h1>
+      <div className="w-full h-[150vh] flex justify-center mt-8">
+        <div className="w-10/12 flex justify-center ">
+          <ul className="before:content-[''] before:h-full before:w-1 relative before:absolute before:bg-pink-500">
+            {journey.map(
+              ({ title, logo, description, subtitle, year }, index) => {
+                const topValue = 18 * index + "rem";
+                return (
+                  <li
+                    key={index}
+                    style={{
+                      position: "absolute",
+                      top: topValue,
+                      ...(index % 2 === 0
+                        ? { right: "0.875rem" }
+                        : { left: "0.875rem" }),
                     }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
                   >
-                    <JourneyCard
-                      title={title}
-                      logo={logo}
-                      description={description}
-                      subtitle={subtitle}
-                      year={year}
-                      arrowDirection={`${index % 2 === 0 ? "right" : "left"}`}
-                      className="border-2 border-transparent hover:border-pink-500 hover:border-2"
-                    />
-                  </motion.div>
-                </li>
-              );
-            }
-          )}
-        </ul>
+                    <motion.div
+                      initial={{
+                        x: index % 2 === 0 ? -200 : 200,
+                        opacity: 0,
+                      }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ duration: 0.8, ease: "easeOut" }}
+                    >
+                      <JourneyCard
+                        title={title}
+                        logo={logo}
+                        description={description}
+                        subtitle={subtitle}
+                        year={year}
+                        arrowDirection={`${index % 2 === 0 ? "right" : "left"}`}
+                        className="border-2 border-transparent hover:border-pink-500 hover:border-2"
+                      />
+                    </motion.div>
+                  </li>
+                );
+              }
+            )}
+          </ul>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
