@@ -9,7 +9,11 @@ import tailwindLogo from "../../assets/Tailwind_CSS_Logo.png";
 import saasLogo from "../../assets/saas_logo.png";
 import angularLogo from "../../assets/angular_logo.png";
 import nodeLogo from "../../assets/node_logo.png";
-import expressJs from "../../assets/express_js_logo.png";
+import expressJsLogo from "../../assets/express_js_logo.png";
+import pythonLogo from "../../assets/python_logo.png";
+import mySqlLogo from "../../assets/mysql-logo-pure.svg";
+import dockerLogo from "../../assets/docker.svg";
+import langchainLogo from "../../assets/langchain_logo.png";
 import { BookOpen, CheckCircle } from "lucide-react";
 
 const technologies = [
@@ -75,10 +79,34 @@ const technologies = [
     type: "back-end",
   },
   {
-    logo: expressJs,
+    logo: expressJsLogo,
     title: "Express",
     learned: true,
     type: "back-end",
+  },
+  {
+    logo: pythonLogo,
+    title: "Python",
+    learned: true,
+    type: "back-end",
+  },
+  {
+    logo: mySqlLogo,
+    title: "MySQL",
+    learned: true,
+    type: "back-end",
+  },
+  {
+    logo: dockerLogo,
+    title: "Docker",
+    learned: true,
+    type: "dev-ops",
+  },
+  {
+    logo: langchainLogo,
+    title: "LangChain",
+    learned: true,
+    type: "ia",
   },
 ];
 
@@ -100,7 +128,6 @@ export const Technologies = () => {
           Currently Learning
         </p>
       </div>
-
       <h2 className="text-3xl mt-8">Front-end:</h2>
       <div className="mt-8">
         <ul className="flex gap-x-3 gap-y-8 flex-wrap">
@@ -126,6 +153,44 @@ export const Technologies = () => {
           {technologies.map(({ logo, title, learned, type }) => {
             return (
               type === "back-end" && (
+                <li>
+                  <TechnologiesCard
+                    title={title}
+                    logo={logo}
+                    learned={learned}
+                    className="border-2 border-transparent hover:border-pink-500 hover:border-2"
+                  />
+                </li>
+              )
+            );
+          })}
+        </ul>
+      </div>
+      <h2 className="text-3xl mt-8">DevOps:</h2>
+      <div className="mt-8">
+        <ul className="flex gap-x-3 gap-y-8 flex-wrap">
+          {technologies.map(({ logo, title, learned, type }) => {
+            return (
+              type === "dev-ops" && (
+                <li>
+                  <TechnologiesCard
+                    title={title}
+                    logo={logo}
+                    learned={learned}
+                    className="border-2 border-transparent hover:border-pink-500 hover:border-2"
+                  />
+                </li>
+              )
+            );
+          })}
+        </ul>
+      </div>
+      <h2 className="text-3xl mt-8">Artificial Intelligence:</h2>
+      <div className="mt-8">
+        <ul className="flex gap-x-3 gap-y-8 flex-wrap">
+          {technologies.map(({ logo, title, learned, type }) => {
+            return (
+              type === "ia" && (
                 <li>
                   <TechnologiesCard
                     title={title}
