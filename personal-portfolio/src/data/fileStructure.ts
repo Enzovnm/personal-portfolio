@@ -59,11 +59,5 @@ export const fileStructure: INode = {
       type: "readme",
       iconType: "readme",
     },
-    {
-      id: 10,
-      name: "CREDITS.md",
-      type: "readme",
-      iconType: "readme",
-    },
   ],
 };

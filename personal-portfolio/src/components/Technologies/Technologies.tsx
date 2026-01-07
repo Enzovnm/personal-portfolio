@@ -13,6 +13,10 @@ import expressJsLogo from "../../assets/express_js_logo.png";
 import pythonLogo from "../../assets/python_logo.png";
 import mySqlLogo from "../../assets/mysql-logo-pure.svg";
 import dockerLogo from "../../assets/docker.svg";
+import albatoLogo from "../../assets/albato_logo.png";
+import n8nLogo from "../../assets/n8n-color.png";
+import zapierLogo from "../../assets/zapier-icon.svg";
+import makeLogo from "../../assets/make-color.png";
 import langchainLogo from "../../assets/langchain_logo.png";
 import { BookOpen, CheckCircle } from "lucide-react";
 
@@ -108,6 +112,30 @@ const technologies = [
     learned: true,
     type: "ia",
   },
+  {
+    logo: albatoLogo,
+    title: "Albato",
+    learned: true,
+    type: "low-code_no-code",
+  },
+  {
+    logo: n8nLogo,
+    title: "n8n",
+    learned: true,
+    type: "low-code_no-code",
+  },
+  {
+    logo: zapierLogo,
+    title: "Zapier",
+    learned: true,
+    type: "low-code_no-code",
+  },
+  {
+    logo: makeLogo,
+    title: "Make",
+    learned: true,
+    type: "low-code_no-code",
+  },
 ];
 
 export const Technologies = () => {
@@ -191,6 +219,25 @@ export const Technologies = () => {
           {technologies.map(({ logo, title, learned, type }) => {
             return (
               type === "ia" && (
+                <li>
+                  <TechnologiesCard
+                    title={title}
+                    logo={logo}
+                    learned={learned}
+                    className="border-2 border-transparent hover:border-pink-500 hover:border-2"
+                  />
+                </li>
+              )
+            );
+          })}
+        </ul>
+      </div>
+      <h2 className="text-3xl mt-8">No-code / Low-code</h2>
+      <div className="mt-8">
+        <ul className="flex gap-x-3 gap-y-8 flex-wrap">
+          {technologies.map(({ logo, title, learned, type }) => {
+            return (
+              type === "low-code_no-code" && (
                 <li>
                   <TechnologiesCard
                     title={title}

@@ -18,7 +18,19 @@ export const CodeContextProvider = ({ children }: { children: ReactNode }) => {
     pictureUrl: "./me.png"
   });
 
-  AboutMe();`;
+AboutMe();`;
+
+  const journey = `export const Journey = () => ({
+    journey: myJourney
+  });
+
+Journey();`;
+
+  const technologies = `export const Technologies = () => ({
+    technologies: myTechnologies
+  });
+
+Technologies();`;
 
   const { fileSelected } = useDirectoryTreeContext();
 
@@ -27,8 +39,11 @@ export const CodeContextProvider = ({ children }: { children: ReactNode }) => {
       case "AboutMe.tsx":
         setCode({ text: aboutMe });
         break;
-      case "Carrer.tsx":
-        setCode({ text: "const carrer = 'write here'" });
+      case "Journey.tsx":
+        setCode({ text: journey });
+        break;
+      case "Technologies.tsx":
+        setCode({ text: technologies });
         break;
       default:
         setCode({ text: "console.log('hello world')" });
