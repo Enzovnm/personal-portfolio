@@ -8,6 +8,7 @@ import { motion } from "motion/react";
 import type { INodeContextValue } from "../../contexts/DirectoryTreeContext";
 import { Technologies } from "../Technologies/Technologies";
 import { Projects } from "../Projects/Projects";
+import { ContactMe } from "../ContactMe/ContactMe";
 
 interface IModalMainProps {
   isOpen: boolean;
@@ -38,6 +39,9 @@ export const ModalMain = ({ isOpen, onClose }: IModalMainProps) => {
         break;
       case "Projects.tsx":
         content = <Projects />;
+        break;
+      case "ContactMe.tsx":
+        content = <ContactMe />;
         break;
       default:
         content = <div>Developing....</div>;

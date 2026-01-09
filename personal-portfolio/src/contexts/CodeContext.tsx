@@ -38,6 +38,12 @@ Technologies();`;
 
 Projects();`;
 
+  const contactMe = `export const ContactMe = () => ({
+    contact: myContact
+  });
+
+ContactMe();`;
+
   const { fileSelected } = useDirectoryTreeContext();
 
   function setCurrentCode(node: INodeContextValue) {
@@ -53,6 +59,9 @@ Projects();`;
         break;
       case "Projects.tsx":
         setCode({ text: projects });
+        break;
+      case "ContactMe.tsx":
+        setCode({ text: contactMe });
         break;
       default:
         setCode({ text: "console.log('hello world')" });
