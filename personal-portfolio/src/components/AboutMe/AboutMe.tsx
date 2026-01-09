@@ -62,6 +62,11 @@ export const AboutMe = () => {
             <li>
               Currently in the final semester of my Computer Science degree.
             </li>
+            <li>
+              Languages:
+              <br /> 🇧🇷 Brazilian portuguese - Native
+              <br /> 🇬🇧 English – Conversational & technical reading
+            </li>
           </ul>
         </div>
       </div>

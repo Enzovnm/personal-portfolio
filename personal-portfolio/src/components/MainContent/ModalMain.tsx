@@ -7,7 +7,7 @@ import { ModalContent } from "./ModalContent";
 import { motion } from "motion/react";
 import type { INodeContextValue } from "../../contexts/DirectoryTreeContext";
 import { Technologies } from "../Technologies/Technologies";
-import { Projects } from "../Projects/Project";
+import { Projects } from "../Projects/Projects";
 
 interface IModalMainProps {
   isOpen: boolean;

@@ -32,6 +32,12 @@ Journey();`;
 
 Technologies();`;
 
+  const projects = `export const Projects = () => ({
+    projects: myProjects
+  });
+
+Projects();`;
+
   const { fileSelected } = useDirectoryTreeContext();
 
   function setCurrentCode(node: INodeContextValue) {
@@ -44,6 +50,9 @@ Technologies();`;
         break;
       case "Technologies.tsx":
         setCode({ text: technologies });
+        break;
+      case "Projects.tsx":
+        setCode({ text: projects });
         break;
       default:
         setCode({ text: "console.log('hello world')" });
