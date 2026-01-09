@@ -42,7 +42,11 @@ export const CodeBlock = ({ onFinish, onStart }: ICodeBlockProps) => {
   }, [code]);
 
   return (
-    <Highlight code={displayedCode} theme={themes.dracula} language="tsx">
+    <Highlight
+      code={displayedCode}
+      theme={themes.dracula}
+      language={`${code?.text?.[0] === "#" ? "markdown" : "tsx"}`}
+    >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre className={className} style={{ ...style, minHeight: "100px" }}>
           {tokens.map((line, i) => (

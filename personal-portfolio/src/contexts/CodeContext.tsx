@@ -44,6 +44,13 @@ Projects();`;
 
 ContactMe();`;
 
+  const readMe = `# Thank you for visiting 👋  
+I’m glad you took the time to check out my portfolio website.  
+Here I share my projects, experiences, and what I’m passionate about as a developer.  
+Feel free to explore and get in touch.  
+I hope you enjoy your stay 🚀
+`;
+
   const { fileSelected } = useDirectoryTreeContext();
 
   function setCurrentCode(node: INodeContextValue) {
@@ -62,6 +69,9 @@ ContactMe();`;
         break;
       case "ContactMe.tsx":
         setCode({ text: contactMe });
+        break;
+      case "README.md":
+        setCode({ text: readMe });
         break;
       default:
         setCode({ text: "console.log('hello world')" });

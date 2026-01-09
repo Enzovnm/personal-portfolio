@@ -18,40 +18,29 @@ interface IModalMainProps {
 export const ModalMain = ({ isOpen, onClose }: IModalMainProps) => {
   const { fileSelected } = useDirectoryTreeContext();
 
-  function showContent(file: INodeContextValue | null): ReactNode {
-    let content;
-    if (file === null)
-      return (
-        <div>
-          <p>Please select a valid file.</p>
-        </div>
-      );
+  function showContent(file: INodeContextValue | null): ReactNode | null {
+    if (!file) return null;
 
     switch (file.name) {
       case "AboutMe.tsx":
-        content = <AboutMe />;
-        break;
+        return <AboutMe />;
       case "Journey.tsx":
-        content = <Journey />;
-        break;
+        return <Journey />;
       case "Technologies.tsx":
-        content = <Technologies />;
-        break;
+        return <Technologies />;
       case "Projects.tsx":
-        content = <Projects />;
-        break;
+        return <Projects />;
       case "ContactMe.tsx":
-        content = <ContactMe />;
-        break;
+        return <ContactMe />;
       default:
-        content = <div>Developing....</div>;
-        break;
+        return null;
     }
-
-    return content;
   }
+
+  const content = showContent(fileSelected);
   return (
-    isOpen && (
+    isOpen &&
+    content && (
       <motion.div
         initial={{ opacity: 0, y: 50, scale: 0.98 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -63,7 +52,7 @@ export const ModalMain = ({ isOpen, onClose }: IModalMainProps) => {
         className="bg-white h-full w-full text-black absolute top-0 left-0 scale-75 rounded-xl"
       >
         <TitleBar type="modal" onClose={onClose} />
-        <ModalContent>{showContent(fileSelected)}</ModalContent>
+        <ModalContent>{content}</ModalContent>
       </motion.div>
     )
   );
