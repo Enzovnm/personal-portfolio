@@ -19,13 +19,13 @@ export const JourneyCard = ({
 }: IJourneyCardProps) => {
   return (
     <div
-      className={`before:content-[''] before:absolute before:top-0 before:h-8 before:-z-0 ${
+      className={`before:content-[''] lg:before:absolute lg:before:top-0 lg:before:h-8 lg:before:-z-0 before:hidden lg:before:block ${
         arrowDirection === "left"
-          ? "before:-left-3.5  before:-rotate-90"
-          : "before:-right-3.5 before:rotate-90"
-      } before:border-t-transparent before:border-r-transparent before:border-b-slate-blue-explorer before:border-l-transparent before:border-r-[10px] before:border-b-[20px] before:border-l-[10px]  w-132 h-64 bg-slate-blue-explorer flex flex-col justify-evenly p-4 rounded-xl text-white ${className}`}
+          ? "lg:before:-left-3.5  lg:before:-rotate-90"
+          : "lg:before:-right-3.5 lg:before:rotate-90"
+      } before:border-t-transparent before:border-r-transparent before:border-b-slate-blue-explorer before:border-l-transparent before:border-r-[10px] before:border-b-[20px] before:border-l-[10px] w-78 h-86 lg:w-132 lg:h-64 bg-slate-blue-explorer flex flex-col justify-evenly p-4 rounded-xl text-white ${className}`}
     >
-      <div className="flex items-center justify-between w-full">
+      <div className="flex items-center text-center lg:text-start lg:justify-between lg:flex-row flex-col w-full">
         <div className="h-12 w-12">
           <img className="object-cover w-full h-full" src={logo} />
         </div>

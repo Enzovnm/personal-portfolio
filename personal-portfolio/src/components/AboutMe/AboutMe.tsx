@@ -5,9 +5,9 @@ import { motion } from "motion/react";
 
 export const AboutMe = () => {
   return (
-    <div className="flex h-full pt-12 w-full">
-      <div className=" flex flex-col items-center w-1/2">
-        <div className="w-96 h-96 rounded-full">
+    <div className="flex flex-col justify-center lg:justify-start lg:flex-row lg:h-full pt-12 w-full">
+      <div className=" flex flex-col  items-center lg:w-1/2">
+        <div className="h-72 w-72 lg:w-96 lg:h-96 rounded-full">
           <img
             className="w-full h-full rounded-full object-cover "
             src={imgUrl}
@@ -17,20 +17,20 @@ export const AboutMe = () => {
           Software developer @Albato
         </h3>
         <div className="flex gap-2 mt-8">
-          <a href="">
+          <a href="https://www.linkedin.com/in/enzovila" target="_blank">
             <FaLinkedin className="w-10 h-10" />
           </a>
-          <a href="">
+          <a href="https://github.com/Enzovnm" target="_blank">
             <FaGithub className="w-10 h-10" />
           </a>
-          <a href="">
+          <a href="mailto:enzovila.monteiro@gmail.com">
             <BiLogoGmail className="w-10 h-10" />
           </a>
         </div>
       </div>
-      <div className="text-4xl w-1/2">
-        <h1 className="">
-          Hi, my name is Enzo!{" "}
+      <div className="mt-8 lg:mt-0 text-2xl text-center lg:text-left lg:text-4xl lg:w-1/2">
+        <h1 className="text-2xl lg:text-4xl">
+          Hi, my name is Enzo!
           <motion.span
             animate={{ rotate: [0, 30, -10, 30, 0] }}
             transition={{
@@ -44,8 +44,8 @@ export const AboutMe = () => {
           </motion.span>
         </h1>
         <div className="mt-9 ">
-          <h2 className="text-3xl text">About me:</h2>
-          <ul className="text-2xl mt-9 space-y-9 text-justify list-disc ">
+          <h2 className="lg:text-3xl text-2xl">About me:</h2>
+          <ul className="text-xl lg:text-2xl mt-9 space-y-9 text-justify list-disc ">
             <li>
               I'm a passionate programmer, driven by the understanding and
               reflection on contemporary challenges, as well as by the planning

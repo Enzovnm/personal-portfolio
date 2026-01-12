@@ -141,8 +141,8 @@ const technologies = [
 export const Technologies = () => {
   return (
     <div>
-      <h1 className="text-4xl text-center">Technologies</h1>
-      <div className="flex gap-x-2">
+      <h1 className="lg:text-4xl text-2xl text-center">Technologies</h1>
+      <div className="flex lg:flex-row flex-col gap-y-4 lg:mt-2  mt-4 lg:gap-y-0 gap-x-2">
         <p>
           <span>
             <CheckCircle className="inline mx-2" />
@@ -156,7 +156,7 @@ export const Technologies = () => {
           Currently Learning
         </p>
       </div>
-      <h2 className="text-3xl mt-8">Front-end:</h2>
+      <h2 className="lg:text-3xl text-xl mt-8">Front-end:</h2>
       <div className="mt-8">
         <ul className="flex gap-x-3 gap-y-8 flex-wrap">
           {technologies.map(({ logo, title, learned, type }) => {
@@ -167,7 +167,7 @@ export const Technologies = () => {
                     title={title}
                     logo={logo}
                     learned={learned}
-                    className="border-2 border-transparent hover:border-pink-500 hover:border-2"
+                    className="border-2  border-transparent hover:border-pink-500 hover:border-2"
                   />
                 </li>
               )
@@ -175,7 +175,7 @@ export const Technologies = () => {
           })}
         </ul>
       </div>
-      <h2 className="text-3xl mt-8">Back-end:</h2>
+      <h2 className="lg:text-3xl text-xl mt-8">Back-end:</h2>
       <div className="mt-8">
         <ul className="flex gap-x-3 gap-y-8 flex-wrap">
           {technologies.map(({ logo, title, learned, type }) => {
@@ -194,7 +194,7 @@ export const Technologies = () => {
           })}
         </ul>
       </div>
-      <h2 className="text-3xl mt-8">DevOps:</h2>
+      <h2 className="lg:text-3xl text-xl mt-8">DevOps:</h2>
       <div className="mt-8">
         <ul className="flex gap-x-3 gap-y-8 flex-wrap">
           {technologies.map(({ logo, title, learned, type }) => {
@@ -213,7 +213,7 @@ export const Technologies = () => {
           })}
         </ul>
       </div>
-      <h2 className="text-3xl mt-8">Artificial Intelligence:</h2>
+      <h2 className="lg:text-3xl text-xl mt-8">Artificial Intelligence:</h2>
       <div className="mt-8">
         <ul className="flex gap-x-3 gap-y-8 flex-wrap">
           {technologies.map(({ logo, title, learned, type }) => {
@@ -232,7 +232,7 @@ export const Technologies = () => {
           })}
         </ul>
       </div>
-      <h2 className="text-3xl mt-8">No-code / Low-code</h2>
+      <h2 className="lg:text-3xl text-xl mt-8">No-code / Low-code</h2>
       <div className="mt-8">
         <ul className="flex gap-x-3 gap-y-8 flex-wrap">
           {technologies.map(({ logo, title, learned, type }) => {

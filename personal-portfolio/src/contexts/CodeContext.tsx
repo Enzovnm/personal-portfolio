@@ -13,7 +13,7 @@ export const CodeContextProvider = ({ children }: { children: ReactNode }) => {
   const [code, setCode] = useState<ICode | null>(null);
   const aboutMe = `export const AboutMe = () => ({
     name: "Enzo Monteiro",
-    role: "Software Engineer @Albato",
+    role: "Software Developer",
     description: myDescription,
     pictureUrl: "./me.png"
   });

@@ -15,7 +15,7 @@ export const TechnologiesCard = ({
 }: ITechnologiesCardProps) => {
   return (
     <div
-      className={`before:content-[''] before:absolute before:top-0 w-118 h-32 bg-slate-blue-explorer flex flex-col justify-evenly p-4 rounded-xl text-white ${className}`}
+      className={`before:content-[''] before:absolute before:top-0 w-80 lg:w-104 lg:h-32  bg-slate-blue-explorer flex flex-col justify-evenly p-4 rounded-xl text-white ${className}`}
     >
       <div className="flex items-center justify-between w-full">
         <div className="h-12 w-12">

@@ -49,7 +49,7 @@ export const ModalMain = ({ isOpen, onClose }: IModalMainProps) => {
           duration: 0.8,
           ease: [0.05, 0.1, 0.3, 1.4],
         }}
-        className="bg-white h-full w-full text-black absolute top-0 left-0 scale-75 rounded-xl"
+        className="bg-white h-full w-full text-black absolute top-0 left-0 scale-90 lg:scale-75 rounded-xl"
       >
         <TitleBar type="modal" onClose={onClose} />
         <ModalContent>{content}</ModalContent>
