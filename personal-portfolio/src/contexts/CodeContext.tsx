@@ -45,9 +45,8 @@ Projects();`;
 ContactMe();`;
 
   const readMe = `# Thank you for visiting 👋  
-I’m glad you took the time to check out my portfolio website.  
-Here I share my projects, experiences, and what I’m passionate about as a developer.  
-Feel free to explore and get in touch.  
+Feel free to explore and 
+get in touch.  
 I hope you enjoy your stay 🚀
 `;
 

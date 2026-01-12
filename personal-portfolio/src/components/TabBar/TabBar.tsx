@@ -6,9 +6,9 @@ export const TabBar = () => {
 
   return (
     <nav className="max-h-9 h-full w-full bg-slate-black text-sm flex lg:overflow-hidden ">
-      <ul className="flex items-center ">
+      <ul className="flex overflow-x-scroll lg:overflow-hidden items-center ">
         {node.map(({ node }, index) => {
-          const className = `pr-8 border-r-1 bg-slate-blue-explorer flex items-center h-full border-r-zinc-900 ${
+          const className = `lg:pr-8 pr-0 border-r-1 bg-slate-blue-explorer flex items-center h-full border-r-zinc-900 ${
             index > 0 ? "pl-3" : "pl-0"
           }  ${
             node.selected ? "border-t-1 !border-t-pink-500 !bg-dracula" : ""

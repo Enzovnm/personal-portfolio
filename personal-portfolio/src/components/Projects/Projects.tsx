@@ -116,7 +116,11 @@ export const Projects = () => {
               <SwiperSlide key={index}>
                 <div
                   className={`relative shadow-2xl rounded-2xl overflow-hidden transition-all duration-500 
-                    ${isActive ? "h-[768px] scale-95" : "h-[968px] opacity-85"}
+                    ${
+                      isActive
+                        ? "h-[70vh] sm:h-[75vh] lg:h-[80vh] scale-95"
+                        : "h-[75vh] sm:h-[80vh] lg:h-[85vh] opacity-85"
+                    }
                   `}
                 >
                   <img
@@ -129,9 +133,9 @@ export const Projects = () => {
                     }`}
                   />
 
-                  <div className="absolute bottom-0 left-0 p-4 w-full h-24 flex justify-between bg-black">
+                  <div className="absolute bottom-0 left-0 p-4 w-full lg:h-24 h-32 flex justify-between bg-black">
                     <div>
-                      <h3 className="text-white text-2xl font-semibold">
+                      <h3 className="text-white lg:text-2xl text-xl font-semibold">
                         {project.title}
                       </h3>
                       <p className="text-white/80 text-lg mt-1 line-clamp-2">
@@ -151,7 +155,7 @@ export const Projects = () => {
                     )}
                   </div>
                   {project.live && (
-                    <div className="absolute left-0 p-4 bottom-24 bg-white">
+                    <div className="absolute left-0 p-4 lg:bottom-24 bottom-32 bg-white">
                       <a
                         className="text-lg flex items-center gap-2 text-black shadow-2xl"
                         href={project.live}

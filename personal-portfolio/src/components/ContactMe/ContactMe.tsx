@@ -8,9 +8,9 @@ export const ContactMe = () => {
     <section className="w-full h-full py-12">
       <h1 className="text-4xl text-center  mb-10">Contact Me</h1>
 
-      <div className="flex w-full items-center  h-5/6 justify-center gap-10">
-        <div className="bg-white w-1/2 flex items-center justify-around">
-          <ul className="space-y-20">
+      <div className="flex lg:flex-row flex-col w-full lg:items-center h-full lg:h-5/6 lg:justify-center gap-10">
+        <div className="bg-white w-full lg:w-1/2  lg:order-1 order-2 flex items-center justify-around">
+          <ul className="lg:space-y-20 space-y-5 ">
             <li>
               <h2 className="text-2xl flex items-center gap-2 font-bold">
                 LinkedIn <FaLinkedin />
@@ -54,7 +54,7 @@ export const ContactMe = () => {
           </ul>
         </div>
 
-        <div className="w-2/3">
+        <div className="w-full  lg:w-2/3">
           <img
             src={contactMe}
             alt="Contact illustration"
