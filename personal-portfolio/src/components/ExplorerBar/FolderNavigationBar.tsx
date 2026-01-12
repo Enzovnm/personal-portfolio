@@ -1,15 +1,19 @@
 import type { INodeContextValue } from "../../contexts/DirectoryTreeContext";
 import { useDirectoryTreeContext } from "../../hooks/useDirectoryTreeContext";
 import ChevronDown from "/home/enzo/Programming/personal-portfolio/personal-portfolio/src/assets/chevron-down.svg?react";
+import { useHamburguerContext } from "../../hooks/useHamburguerContext";
 
 export const FolderNavigationBar = () => {
   const { node, toggleFolder, handleFileSelected } = useDirectoryTreeContext();
 
   const flatNodes = node;
 
+  const { close } = useHamburguerContext();
+
   const handleClick = (node: INodeContextValue) => {
     if (node.type !== "folder") {
       handleFileSelected(node);
+      close();
       return;
     }
     toggleFolder(node.id);

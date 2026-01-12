@@ -2,8 +2,11 @@ import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import imgUrl from "../../assets/me.png";
 import { BiLogoGmail } from "react-icons/bi";
 import { motion } from "motion/react";
+import { useTranslation } from "react-i18next";
 
 export const AboutMe = () => {
+  const { t } = useTranslation("about");
+
   return (
     <div className="flex flex-col justify-center lg:justify-start lg:flex-row lg:h-full pt-12 w-full">
       <div className=" flex flex-col  items-center lg:w-1/2">
@@ -13,9 +16,7 @@ export const AboutMe = () => {
             src={imgUrl}
           />
         </div>
-        <h3 className="text-2xl text-center mt-8">
-          Software developer @Albato
-        </h3>
+        <h3 className="text-2xl text-center mt-8">{t("title")}</h3>
         <div className="flex gap-2 mt-8">
           <a href="https://www.linkedin.com/in/enzovila" target="_blank">
             <FaLinkedin className="w-10 h-10" />
