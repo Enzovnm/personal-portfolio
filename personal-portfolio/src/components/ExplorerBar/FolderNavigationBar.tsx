@@ -1,6 +1,6 @@
 import type { INodeContextValue } from "../../contexts/DirectoryTreeContext";
 import { useDirectoryTreeContext } from "../../hooks/useDirectoryTreeContext";
-import ChevronDown from "/home/enzo/Programming/personal-portfolio/personal-portfolio/src/assets/chevron-down.svg?react";
+import ChevronDown from "../../assets/chevron-down.svg?react";
 import { useHamburguerContext } from "../../hooks/useHamburguerContext";
 import { useTranslation } from "react-i18next";
 
