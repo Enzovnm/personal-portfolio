@@ -1,10 +1,10 @@
 {
-  "title": "Desenvolvedor de Software @Albato",
-  "greeting": "Oi, meu nome é Enzo!",
+  "sectionTitle": "Desenvolvedor de Software @Albato",
+  "greeting": "Olá, meu nome é Enzo!",
   "aboutTitle": "Sobre mim:",
   "items": [
-    "Sou um programador apaixonado, motivado pela compreensão e reflexão sobre desafios contemporâneos, bem como pelo planejamento e construção de algoritmos eficientes para resolvê-los.",
-    "Comecei minha jornada na programação aos 16 anos, quando escrevi meu primeiro \"Hello, world\" em Python 😆.",
+    "Sou um programador, motivado pela compreensão e reflexão sobre desafios contemporâneos, bem como pelo planejamento e construção de algoritmos eficientes para resolvê-los.",
+    "Comecei minha jornada na programação aos 16 anos, quando escrevi meu primeiro \"Hello, world\" em Python.",
     "Especialista em automação de software.",
     "Atualmente no último semestre do curso de Ciência da Computação.",
     "Idiomas:\n🇧🇷 Português brasileiro – Nativo\n🇬🇧 Inglês – Conversacional e leitura técnica"

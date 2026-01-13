@@ -2,6 +2,7 @@ import type { INodeContextValue } from "../../contexts/DirectoryTreeContext";
 import { useDirectoryTreeContext } from "../../hooks/useDirectoryTreeContext";
 import ChevronDown from "/home/enzo/Programming/personal-portfolio/personal-portfolio/src/assets/chevron-down.svg?react";
 import { useHamburguerContext } from "../../hooks/useHamburguerContext";
+import { useTranslation } from "react-i18next";
 
 export const FolderNavigationBar = () => {
   const { node, toggleFolder, handleFileSelected } = useDirectoryTreeContext();
@@ -18,6 +19,8 @@ export const FolderNavigationBar = () => {
     }
     toggleFolder(node.id);
   };
+
+  const { t } = useTranslation("files");
 
   return (
     <div className="h-full flex-col">
@@ -40,7 +43,7 @@ export const FolderNavigationBar = () => {
                     ""
                   )}
                   <span className="mr-2 h-4">{node.icon}</span>
-                  {node.name}
+                  {node.fileKey ? t(`${node.fileKey}`) : node.name}
                 </button>
               </li>
             );

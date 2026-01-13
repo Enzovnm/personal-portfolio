@@ -1,0 +1,16 @@
+{
+  "sectionTitle": "Tecnologias",
+
+  "legend": {
+    "proficient": "Proficiente",
+    "learning": "Atualmente aprendendo"
+  },
+
+  "categories": {
+    "frontend": "Front-end",
+    "backend": "Back-end",
+    "devops": "DevOps",
+    "ai": "Inteligência Artificial",
+    "nocode": "No-code / Low-code"
+  }
+}

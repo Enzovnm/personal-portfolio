@@ -7,4 +7,13 @@ export interface INode {
   type: FileType;
   iconType?: IconType;
   children?: INode[];
+  fileKey?: FileKey;
 }
+
+export type FileKey =
+  | "about"
+  | "journey"
+  | "technologies"
+  | "projects"
+  | "contact"
+  | "readme";

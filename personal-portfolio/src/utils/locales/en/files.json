@@ -1,0 +1,11 @@
+{
+  "personalPortfolio": "personal-portfolio",
+  "src": "src",
+  "components": "components",
+  "about": "AboutMe.tsx",
+  "journey": "Journey.tsx",
+  "technologies": "Technologies.tsx",
+  "projects": "Projects.tsx",
+  "contact": "ContactMe.tsx",
+  "readme": "README.md"
+}

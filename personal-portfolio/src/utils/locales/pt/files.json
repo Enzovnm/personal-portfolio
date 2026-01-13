@@ -1,0 +1,11 @@
+{
+  "personalPortfolio": "portfolio-pessoal",
+  "src": "src",
+  "components": "componentes",
+  "about": "SobreMim.tsx",
+  "journey": "Jornada.tsx",
+  "technologies": "Tecnologias.tsx",
+  "projects": "Projetos.tsx",
+  "contact": "Contato.tsx",
+  "readme": "LEIAME.md"
+}

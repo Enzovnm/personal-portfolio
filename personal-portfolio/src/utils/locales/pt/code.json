@@ -1,0 +1,15 @@
+{
+  "code": {
+    "about": "export const SobreMim = () => ({\n  nome: \"Enzo Monteiro\",\n  cargo: \"Software developer\",\n  descricao: minhaDescricao,\n  fotoUrl: \"./me.png\"\n});\n\nSobreMim();",
+
+    "journey": "export const Jornada = () => ({\n  jornada: minhaJornada\n});\n\nJornada();",
+
+    "technologies": "export const Tecnologias = () => ({\n  tecnologias: minhasTecnologias\n});\n\nTecnologias();",
+
+    "projects": "export const Projetos = () => ({\n  projetos: meusProjetos\n});\n\nProjetos();",
+
+    "contact": "export const Contato = () => ({\n  contato: meuContato\n});\n\nContato();",
+
+    "readme": "# Obrigado pela visita 👋  \nSinta-se à vontade para explorar e \nentrar em contato.  \nAproveite a experiência 🚀"
+  }
+}

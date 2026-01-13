@@ -2,11 +2,13 @@ import React from "react";
 import contactMe from "../../assets/contactMe.png";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { BiLogoGmail } from "react-icons/bi";
+import { useTranslation } from "react-i18next";
 
 export const ContactMe = () => {
+  const { t } = useTranslation("contactMe");
   return (
     <section className="w-full h-full py-12">
-      <h1 className="text-4xl text-center  mb-10">Contact Me</h1>
+      <h1 className="text-4xl text-center  mb-10">{t("sectionTitle")}</h1>
 
       <div className="flex lg:flex-row flex-col w-full lg:items-center h-full lg:h-5/6 lg:justify-center gap-10">
         <div className="bg-white w-full lg:w-1/2  lg:order-1 order-2 flex items-center justify-around">

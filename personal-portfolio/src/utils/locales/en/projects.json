@@ -1,0 +1,40 @@
+{
+  "projects": {
+    "title": "Projects",
+    "liveDemo": "Click here to see live demo",
+    "items": {
+      "oceanSave": {
+        "title": "Ocean Save",
+        "description": "A college project aiming to bring concepts about marine sustainability"
+      },
+      "marmitaDoBem": {
+        "title": "Marmita do Bem",
+        "description": "A college project aiming to bring concepts about SDG 2 (Zero Hunger)"
+      },
+      "livrariaLunarEcommerce": {
+        "title": "Livraria Lunar - Ecommerce",
+        "description": "An e-commerce developed for a fictional bookstore"
+      },
+      "livrariaLunarLanding": {
+        "title": "Livraria Lunar - Landing Page",
+        "description": "A landing page developed for a fictional bookstore"
+      },
+      "greenSafe": {
+        "title": "GreenSafe",
+        "description": "A fictional agriculture company"
+      },
+      "ghgCalculator": {
+        "title": "GHG Emissions Calculator",
+        "description": "A college project aiming to bring concepts about GHG emissions"
+      },
+      "dataStructure": {
+        "title": "Data Structure Performance",
+        "description": "A college project aiming to bring concepts about performance in sorting algorithms"
+      },
+      "personalPortfolio": {
+        "title": "Personal Portfolio",
+        "description": "My portfolio"
+      }
+    }
+  }
+}

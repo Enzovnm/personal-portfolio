@@ -1,0 +1,35 @@
+{
+  "sectionTitle": "Jornada",
+  "items": [
+    {
+      "title": "ETEC Prof° Basilides de Godoy",
+      "subtitle": "Escola técnica",
+      "description": "Concluí o curso técnico em Análise e Desenvolvimento de Sistemas, adquirindo experiência em lógica de programação, Java/Android, .NET MVC e modelagem de banco de dados com SQL Server. Fui premiado como melhor desenvolvedor front-end do curso.",
+      "year": "2020 ~ 2021"
+    },
+    {
+      "title": "Giordano",
+      "subtitle": "Escola",
+      "description": "Concluí o ensino médio no Colégio Giordano, onde adquiri os conhecimentos fundamentais da educação básica.",
+      "year": "2021"
+    },
+    {
+      "title": "Wiseup",
+      "subtitle": "Escola de inglês",
+      "description": "Concluí o curso avançado de inglês na WiseUp, desenvolvendo escrita, compreensão e comunicação fluente — habilidades essenciais para atuar em ambientes profissionais internacionais.",
+      "year": "2019 ~ 2022"
+    },
+    {
+      "title": "Universidade Paulista",
+      "subtitle": "Faculdade",
+      "description": "Atualmente curso Bacharelado em Ciência da Computação na UNIP, adquirindo uma base sólida e abrangente em princípios fundamentais da computação, desde algoritmos e estruturas de dados até desenvolvimento de software e sistemas complexos.",
+      "year": "2022 ~ Presente"
+    },
+    {
+      "title": "Albato",
+      "subtitle": "Builder engineer",
+      "description": "Trabalho na Albato lidando com APIs e webhooks, desenvolvendo integrações com a ferramenta no-code Builder e realizando testes com Postman e outras ferramentas para garantir automações eficientes.",
+      "year": "2022 ~ Presente"
+    }
+  ]
+}

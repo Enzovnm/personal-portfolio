@@ -1,0 +1,15 @@
+{
+  "code": {
+    "about": "export const AboutMe = () => ({\n  name: \"Enzo Monteiro\",\n  role: \"Software Developer\",\n  description: myDescription,\n  pictureUrl: \"./me.png\"\n});\n\nAboutMe();",
+
+    "journey": "export const Journey = () => ({\n  journey: myJourney\n});\n\nJourney();",
+
+    "technologies": "export const Technologies = () => ({\n  technologies: myTechnologies\n});\n\nTechnologies();",
+
+    "projects": "export const Projects = () => ({\n  projects: myProjects\n});\n\nProjects();",
+
+    "contact": "export const ContactMe = () => ({\n  contact: myContact\n});\n\nContactMe();",
+
+    "readme": "# Thank you for visiting 👋  \nFeel free to explore and \nget in touch.  \nI hope you enjoy your stay 🚀"
+  }
+}

@@ -1,8 +1,11 @@
+import { useTranslation } from "react-i18next";
 import { useDirectoryTreeContext } from "../../hooks/useDirectoryTreeContext";
 import { Tab } from "./Tab";
 
 export const TabBar = () => {
   const { node, handleFileSelected } = useDirectoryTreeContext();
+
+  const { t } = useTranslation("files");
 
   return (
     <nav className="max-h-9 h-full w-full bg-slate-black text-sm flex lg:overflow-hidden ">
@@ -17,7 +20,7 @@ export const TabBar = () => {
             return (
               <Tab
                 key={index}
-                label={node.name}
+                label={node.fileKey ? t(`${node.fileKey}`) : node.name}
                 icon={node.icon}
                 className={className}
                 onClick={() => handleFileSelected(node)}

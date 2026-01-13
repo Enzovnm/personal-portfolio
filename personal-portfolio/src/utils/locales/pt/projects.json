@@ -1,0 +1,40 @@
+{
+  "projects": {
+    "title": "Projetos",
+    "liveDemo": "Clique aqui para ver a demo ao vivo",
+    "items": {
+      "oceanSave": {
+        "title": "Ocean Save",
+        "description": "Projeto acadêmico com o objetivo de apresentar conceitos sobre sustentabilidade marinha"
+      },
+      "marmitaDoBem": {
+        "title": "Marmita do Bem",
+        "description": "Projeto acadêmico com o objetivo de apresentar conceitos sobre o ODS 2 (Fome Zero)"
+      },
+      "livrariaLunarEcommerce": {
+        "title": "Livraria Lunar - E-commerce",
+        "description": "Um e-commerce desenvolvido para uma livraria fictícia"
+      },
+      "livrariaLunarLanding": {
+        "title": "Livraria Lunar - Landing Page",
+        "description": "Uma landing page desenvolvida para uma livraria fictícia"
+      },
+      "greenSafe": {
+        "title": "GreenSafe",
+        "description": "Uma empresa fictícia do setor agrícola"
+      },
+      "ghgCalculator": {
+        "title": "Calculadora de Emissões de GEE",
+        "description": "Projeto acadêmico com o objetivo de apresentar conceitos sobre emissões de gases de efeito estufa"
+      },
+      "dataStructure": {
+        "title": "Performance de Estruturas de Dados",
+        "description": "Projeto acadêmico com o objetivo de apresentar conceitos sobre performance em algoritmos de ordenação"
+      },
+      "personalPortfolio": {
+        "title": "Portfólio Pessoal",
+        "description": "Meu portfólio"
+      }
+    }
+  }
+}

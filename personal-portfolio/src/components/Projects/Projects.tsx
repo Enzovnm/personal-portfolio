@@ -15,67 +15,58 @@ import dataStructure from "../../assets/data-structure.png";
 import personalPortfolio from "../../assets/personal-portfolio.png";
 import { FiGithub } from "react-icons/fi";
 import { GiClick } from "react-icons/gi";
+import { useTranslation } from "react-i18next";
 
 const projects = [
   {
-    title: "Ocean save",
-    description:
-      "A project college aiming to bring concepts about marine sustainability",
+    key: "oceanSave",
     image: oceanSave,
     github: "https://github.com/Enzovnm/ocean-save-website",
     live: "https://enzovnm.github.io/ocean-save-website/",
   },
   {
-    title: "Marmita do bem",
-    description:
-      "A project college aiming to bring concepts about SDG 2 (Zero Hunger)",
+    key: "marmitaDoBem",
     image: marmitaBem,
     github:
       "https://github.com/Enzovnm/restaurant-donation-management-platform",
   },
   {
-    title: "Livraria Lunar - Ecommerce",
-    description: "An e-commerce developed for a fictional bookstore",
+    key: "livrariaLunarEcommerce",
     image: livrariaLunarEcommerce,
     github: "https://github.com/Enzovnm/livraria-lunar-ecommerce",
   },
   {
-    title: "Livraria Lunar - Landing Page",
-    description: "An landing page developed for a fictional bookstore",
+    key: "livrariaLunarLanding",
     image: livrariaLunarLandingPage,
     github: "https://github.com/Enzovnm/livraria-lunar-landing-page",
   },
   {
-    title: "Greensafe",
-    description: "An fictional agriculture company",
+    key: "greenSafe",
     image: greenSafe,
     github: "https://github.com/Enzovnm/green-safe",
     live: "https://greensafeaps.netlify.app/",
   },
   {
-    title: "GHG Emissions Calculator",
-    description:
-      "A project college aiming to bring concepts about GHG Emissions",
+    key: "ghgCalculator",
     image: ghgEmissionCalculator,
     github:
       "https://github.com/Enzovnm/greenhouse-gases-emission-calculator.git",
   },
   {
-    title: "Data structure performance",
-    description:
-      "A project college aiming to bring concepts about performance in sorting algorithms",
+    key: "dataStructure",
     image: dataStructure,
     github: "https://github.com/Enzovnm/data-structure-perfomance",
   },
   {
-    title: "Personal portfolio",
-    description: "My portfolio",
+    key: "personalPortfolio",
     image: personalPortfolio,
     github: "https://github.com/Enzovnm/personal-portfolio",
   },
 ];
 
 export const Projects = () => {
+  const { t } = useTranslation("projects");
+
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleCardsVisibility = (swiper: SwiperInstance): void => {
@@ -92,7 +83,7 @@ export const Projects = () => {
 
   return (
     <>
-      <h1 className="text-4xl text-center">Projects</h1>
+      <h1 className="text-4xl text-center">{t("projects.title")}</h1>
 
       <div className="w-full h-full overflow-hidden mt-8">
         <Swiper
@@ -125,9 +116,9 @@ export const Projects = () => {
                 >
                   <img
                     src={project.image}
-                    alt={project.title}
+                    alt={t(`projects.items.${project.key}.title`)}
                     className={`h-full w-full object-cover object-top ${
-                      project.title === "Data structure performance"
+                      project.key === "Data structure performance"
                         ? "object-fill"
                         : ""
                     }`}
@@ -136,10 +127,10 @@ export const Projects = () => {
                   <div className="absolute bottom-0 left-0 p-4 w-full lg:h-24 h-32 flex justify-between bg-black">
                     <div>
                       <h3 className="text-white lg:text-2xl text-xl font-semibold">
-                        {project.title}
+                        {t(`projects.items.${project.key}.title`)}
                       </h3>
                       <p className="text-white/80 text-lg mt-1 line-clamp-2">
-                        {project.description}
+                        {t(`projects.items.${project.key}.description`)}
                       </p>
                     </div>
                     {project.github && (
@@ -161,7 +152,7 @@ export const Projects = () => {
                         href={project.live}
                         target="_blank"
                       >
-                        Click here to see live demo
+                        {t("projects.liveDemo")}
                         <span>
                           <GiClick />
                         </span>

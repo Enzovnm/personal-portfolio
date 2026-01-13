@@ -1,0 +1,35 @@
+{
+  "sectionTitle": "Journey",
+  "items": [
+    {
+      "title": "ETEC Prof° Basilides de Godoy",
+      "subtitle": "Technical school",
+      "description": "I completed a technical course in Systems Analysis and Development, gaining experience in programming logic, Java/Android, .NET MVC, and database modeling with SQL Server. I was awarded best front-end developer in the course.",
+      "year": "2020 ~ 2021"
+    },
+    {
+      "title": "Giordano",
+      "subtitle": "School",
+      "description": "I completed high school at Colégio Giordano, where I acquired the fundamental knowledge of basic education.",
+      "year": "2021"
+    },
+    {
+      "title": "Wiseup",
+      "subtitle": "English language school",
+      "description": "I completed the advanced English course at WiseUp, mastering writing, comprehension, and fluent communication—key skills for thriving in international professional environments.",
+      "year": "2019 ~ 2022"
+    },
+    {
+      "title": "Universidade Paulista",
+      "subtitle": "College",
+      "description": "I am currently pursuing a Bachelor's degree in Computer Science at UNIP, gaining a comprehensive and solid foundation in core computing principles, covering everything from algorithms and data structures to software development and complex systems.",
+      "year": "2022 ~ Present"
+    },
+    {
+      "title": "Albato",
+      "subtitle": "Builder engineer",
+      "description": "I work at Albato handling APIs and webhooks, developing integrations using the no-code Builder tool, and performing tests with Postman and other tools to ensure efficient automation.",
+      "year": "2022 ~ Present"
+    }
+  ]
+}

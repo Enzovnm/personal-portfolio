@@ -1,10 +1,10 @@
 {
-  "title": "Software Developer @Albato",
+  "sectionTitle": "Software Developer @Albato",
   "greeting": "Hi, my name is Enzo!",
   "aboutTitle": "About me:",
   "items": [
-    "I'm a passionate programmer, driven by the understanding and reflection on contemporary challenges, as well as by the planning and construction of efficient algorithms to solve them.",
-    "I began my journey in programming at the age of 16, when I wrote my first \"Hello, world\" in Python 😆.",
+    "I'm a programmer, driven by the understanding and reflection on contemporary challenges, as well as by the planning and construction of efficient algorithms to solve them.",
+    "I began my journey in programming at the age of 16, when I wrote my first \"Hello, world\" in Python.",
     "Specialist in software automation.",
     "Currently in the final semester of my Computer Science degree.",
     "Languages:\n🇧🇷 Brazilian Portuguese - Native\n🇬🇧 English – Conversational & technical reading"
