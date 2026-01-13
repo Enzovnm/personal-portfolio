@@ -1,4 +1,3 @@
-import React from "react";
 import contactMe from "../../assets/contactMe.png";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { BiLogoGmail } from "react-icons/bi";
