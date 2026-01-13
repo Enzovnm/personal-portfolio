@@ -6,11 +6,12 @@ import React, {
 } from "react";
 import type { INode } from "../types/node";
 import { fileStructure } from "../data/fileStructure";
-import ReactTs from "/home/enzo/Programming/personal-portfolio/personal-portfolio/src/assets/react_ts.svg?react";
-import Folder from "/home/enzo/Programming/personal-portfolio/personal-portfolio/src/assets/folder.svg?react";
-import ReadMe from "/home/enzo/Programming/personal-portfolio/personal-portfolio/src/assets/readme.svg?react";
-import Src from "/home/enzo/Programming/personal-portfolio/personal-portfolio/src/assets/folder-src.svg?react";
-import Components from "/home/enzo/Programming/personal-portfolio/personal-portfolio/src/assets/folder-components.svg?react";
+// import ReactTs from "/react_ts.svg?react";
+import ReactTs from "../assets/react_ts.svg?react";
+import Folder from "../assets/folder.svg?react";
+import ReadMe from "../assets/readme.svg?react";
+import Src from "../assets/folder-src.svg?react";
+import Components from "../assets/folder-components.svg?react";
 import { treeAdapter } from "../utils/TreeAdapter";
 import type { INodeContextValueLevel } from "../types/node-context-value-level";
 
